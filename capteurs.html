@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Capteurs - Smart School</title>
+
+    <link rel="stylesheet" href="capteurs.css">
+</head>
+
+<body>
+
+    <!-- Barre de navigation -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🏫
+            <span>Smart School</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="dashboard.html">Tableau de bord</a>
+            <a href="capteurs.html" class="active">Capteurs</a>
+            <a href="#">Alertes</a>
+        </nav>
+
+        <div class="profil">
+            👤 Mathéo
+        </div>
+
+    </header>
+
+
+    <!-- Contenu -->
+
+    <main class="contenu">
+
+        <div class="titre">
+
+            <div>
+
+                <span class="petit-titre">SMART SCHOOL</span>
+
+                <h1>Capteurs</h1>
+
+                <p>
+                    Consultez l'état et les données des capteurs
+                    installés dans l'établissement.
+                </p>
+
+            </div>
+
+
+            <div class="etat-general">
+
+                <span class="point"></span>
+
+                Système connecté
+
+            </div>
+
+        </div>
+
+
+        <!-- Résumé -->
+
+        <section class="resume">
+
+            <div class="resume-card">
+
+                <span class="resume-icon">📡</span>
+
+                <div>
+                    <p>Capteurs installés</p>
+                    <strong>20</strong>
+                </div>
+
+            </div>
+
+
+            <div class="resume-card">
+
+                <span class="resume-icon">🟢</span>
+
+                <div>
+                    <p>Capteurs actifs</p>
+                    <strong id="capteursActifs">18</strong>
+                </div>
+
+            </div>
+
+
+            <div class="resume-card">
+
+                <span class="resume-icon">⚠️</span>
+
+                <div>
+                    <p>En attention</p>
+                    <strong id="capteursAttention">2</strong>
+                </div>
+
+            </div>
+
+
+            <div class="resume-card">
+
+                <span class="resume-icon">❌</span>
+
+                <div>
+                    <p>Hors ligne</p>
+                    <strong id="capteursHorsLigne">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Liste des capteurs -->
+
+        <section class="bloc">
+
+            <div class="bloc-titre">
+
+                <div>
+
+                    <h2>Liste des capteurs</h2>
+
+                    <p>
+                        Données actuellement disponibles.
+                    </p>
+
+                </div>
+
+
+                <button onclick="actualiserCapteurs()">
+                    ↻ Actualiser
+                </button>
+
+            </div>
+
+
+            <div class="capteurs">
+
+
+                <!-- Température -->
+
+                <div class="capteur">
+
+                    <div class="capteur-gauche">
+
+                        <div class="icone temperature">
+                            🌡️
+                        </div>
+
+                        <div>
+
+                            <h3>Capteur de température</h3>
+
+                            <p>Salle CIEL • ESP32-01</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="valeur">
+
+                        <strong id="temperature">
+                            21,8 °C
+                        </strong>
+
+                        <span class="statut vert">
+                            ● Actif
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Luminosité -->
+
+                <div class="capteur">
+
+                    <div class="capteur-gauche">
+
+                        <div class="icone lumiere">
+                            💡
+                        </div>
+
+                        <div>
+
+                            <h3>Capteur de luminosité</h3>
+
+                            <p>Salle CIEL • ESP32-01</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="valeur">
+
+                        <strong id="luminosite">
+                            76 %
+                        </strong>
+
+                        <span class="statut vert">
+                            ● Actif
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Présence -->
+
+                <div class="capteur">
+
+                    <div class="capteur-gauche">
+
+                        <div class="icone presence">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <h3>Capteur de présence</h3>
+
+                            <p>Salle informatique • ESP32-02</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="valeur">
+
+                        <strong id="presence">
+                            Présence détectée
+                        </strong>
+
+                        <span class="statut vert">
+                            ● Actif
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Porte -->
+
+                <div class="capteur">
+
+                    <div class="capteur-gauche">
+
+                        <div class="icone porte">
+                            🚪
+                        </div>
+
+                        <div>
+
+                            <h3>Capteur d'ouverture</h3>
+
+                            <p>Administration • ESP32-03</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="valeur">
+
+                        <strong id="porte">
+                            Fermée
+                        </strong>
+
+                        <span class="statut vert">
+                            ● Actif
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Qualité de l'air -->
+
+                <div class="capteur">
+
+                    <div class="capteur-gauche">
+
+                        <div class="icone air">
+                            🌱
+                        </div>
+
+                        <div>
+
+                            <h3>Capteur de qualité de l'air</h3>
+
+                            <p>Atelier • ESP32-04</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="valeur">
+
+                        <strong id="qualiteAir">
+                            Bonne
+                        </strong>
+
+                        <span class="statut orange">
+                            ● Attention
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Informations -->
+
+        <section class="deux-colonnes">
+
+
+            <!-- Dernière communication -->
+
+            <div class="bloc">
+
+                <h2>Dernières communications</h2>
+
+                <p class="description">
+                    Derniers échanges entre les ESP32 et le système.
+                </p>
+
+
+                <div class="communication">
+
+                    <span>📡</span>
+
+                    <div>
+
+                        <strong>ESP32-01</strong>
+
+                        <p>Message reçu il y a 10 secondes</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="communication">
+
+                    <span>📡</span>
+
+                    <div>
+
+                        <strong>ESP32-02</strong>
+
+                        <p>Message reçu il y a 18 secondes</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="communication">
+
+                    <span>📡</span>
+
+                    <div>
+
+                        <strong>ESP32-03</strong>
+
+                        <p>Message reçu il y a 32 secondes</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Informations système -->
+
+            <div class="bloc">
+
+                <h2>Informations système</h2>
+
+                <p class="description">
+                    Informations générales sur les capteurs.
+                </p>
+
+
+                <div class="info-ligne">
+                    <span>Dernière synchronisation</span>
+                    <strong id="heureSynchro">15:10</strong>
+                </div>
+
+
+                <div class="info-ligne">
+                    <span>Fréquence des données</span>
+                    <strong>10 secondes</strong>
+                </div>
+
+
+                <div class="info-ligne">
+                    <span>Protocole</span>
+                    <strong>Wi-Fi</strong>
+                </div>
+
+
+                <div class="info-ligne">
+                    <span>Équipements connectés</span>
+                    <strong>4 ESP32</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>Smart School • Projet CIEL • 2026</p>
+
+        <p>
+            Établissement scolaire intelligent, connecté et sécurisé
+        </p>
+
+    </footer>
+
+
+    <script src="capteurs.js"></script>
+
+</body>
+
+</html>
