@@ -11,18 +11,21 @@
 
     <!-- Barre de navigation -->
     <header class="navbar">
+
         <div class="logo">
-            🏫 <span>Smart School</span>
+            🏫
+            <span>Smart School</span>
         </div>
 
         <nav>
             <a href="index.html" class="active">Accueil</a>
-            <a href="#">Tableau de bord</a>
+            <a href="dashboard.html">Tableau de bord</a>
             <a href="#">Capteurs</a>
             <a href="#">Alertes</a>
         </nav>
 
-        <button class="login-btn">Connexion</button>
+        <a href="#" class="login-btn">Connexion</a>
+
     </header>
 
 
@@ -30,6 +33,7 @@
     <main>
 
         <section class="hero">
+
             <div class="hero-text">
 
                 <span class="badge">🌐 Établissement connecté</span>
@@ -45,18 +49,21 @@
                 </p>
 
                 <div class="buttons">
-                    <button class="primary-btn">
-                        Accéder au tableau de bord →
-                    </button>
 
-                    <button class="secondary-btn">
+                    <a href="dashboard.html" class="primary-btn">
+                        Accéder au tableau de bord →
+                    </a>
+
+                    <button class="secondary-btn" onclick="decouvrirProjet()">
                         Découvrir le projet
                     </button>
+
                 </div>
 
             </div>
 
-            <!-- Aperçu du système -->
+
+            <!-- Aperçu du tableau de bord -->
             <div class="dashboard-preview">
 
                 <div class="preview-header">
@@ -65,38 +72,54 @@
                 </div>
 
                 <div class="preview-card">
+
                     <span>🌡️</span>
+
                     <div>
                         <small>Température</small>
                         <strong>21,5 °C</strong>
                     </div>
+
                 </div>
 
+
                 <div class="preview-card">
+
                     <span>💡</span>
+
                     <div>
                         <small>Éclairage</small>
                         <strong>78 %</strong>
                     </div>
+
                 </div>
 
+
                 <div class="preview-card">
+
                     <span>👤</span>
+
                     <div>
                         <small>Présence</small>
                         <strong>Détectée</strong>
                     </div>
+
                 </div>
 
+
                 <div class="preview-card">
+
                     <span>🛡️</span>
+
                     <div>
                         <small>Sécurité</small>
                         <strong>Protégée</strong>
                     </div>
+
                 </div>
 
             </div>
+
         </section>
 
 
@@ -110,42 +133,62 @@
                 électronique et cybersécurité dans un seul projet.
             </p>
 
+
             <div class="feature-grid">
 
                 <article class="feature">
+
                     <div class="icon">💡</div>
+
                     <h3>Éclairage intelligent</h3>
+
                     <p>
                         Contrôler automatiquement l'éclairage
                         grâce aux capteurs de présence et de luminosité.
                     </p>
+
                 </article>
 
+
                 <article class="feature">
+
                     <div class="icon">🌡️</div>
+
                     <h3>Surveillance des salles</h3>
+
                     <p>
                         Suivre la température et différents paramètres
                         des salles en temps réel.
                     </p>
+
                 </article>
 
+
                 <article class="feature">
+
                     <div class="icon">📡</div>
+
                     <h3>Réseau connecté</h3>
+
                     <p>
                         Les équipements communiquent entre eux
                         grâce au réseau de l'établissement.
                     </p>
+
                 </article>
 
+
                 <article class="feature">
+
                     <div class="icon">🛡️</div>
+
                     <h3>Cybersécurité</h3>
+
                     <p>
                         Protéger les accès, les données et les
                         équipements connectés.
                     </p>
+
                 </article>
 
             </div>
@@ -157,8 +200,13 @@
 
     <!-- Pied de page -->
     <footer>
+
         <p>© 2026 Smart School — Projet CIEL</p>
-        <p>Établissement scolaire intelligent, connecté et sécurisé</p>
+
+        <p>
+            Établissement scolaire intelligent, connecté et sécurisé
+        </p>
+
     </footer>
 
 
