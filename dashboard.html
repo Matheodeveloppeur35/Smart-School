@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tableau de bord - Smart School</title>
+    <title>Tableau de bord — Smart School</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="dashboard.css">
-
 </head>
 
 <body>
 
-
     <!-- Barre de navigation -->
-
     <header class="navbar">
 
         <div class="logo">
@@ -25,23 +20,10 @@
         </div>
 
         <nav>
-
-            <a href="index.html">
-                Accueil
-            </a>
-
-            <a href="dashboard.html" class="active">
-                Tableau de bord
-            </a>
-
-            <a href="capteurs.html">
-                Capteurs
-            </a>
-
-            <a href="alertes.html">
-                Alertes
-            </a>
-
+            <a href="index.html">Accueil</a>
+            <a href="dashboard.html" class="active">Tableau de bord</a>
+            <a href="capteurs.html">Capteurs</a>
+            <a href="alertes.html">Alertes</a>
         </nav>
 
         <button class="login-btn">
@@ -52,15 +34,12 @@
 
 
     <!-- Contenu principal -->
-
     <main>
 
-        <section class="dashboard-page">
+        <!-- Présentation -->
+        <section class="dashboard-header">
 
-
-            <!-- Titre -->
-
-            <div class="page-title">
+            <div>
 
                 <span class="badge">
                     📊 Supervision
@@ -71,390 +50,287 @@
                 </h1>
 
                 <p>
-                    Retrouvez ici les principales informations
-                    de l'établissement en temps réel.
+                    Visualisez l'état général de l'établissement
+                    et de ses équipements connectés.
                 </p>
 
             </div>
 
-
-            <!-- État du système -->
-
             <div class="system-status">
 
-                <span class="online">
-                    ●
-                </span>
+                <span class="status-dot"></span>
 
                 <div>
-
-                    <strong>
-                        Système en ligne
-                    </strong>
-
-                    <p>
-                        Tous les services fonctionnent normalement.
-                    </p>
-
+                    <strong>Système opérationnel</strong>
+                    <small>Dernière mise à jour : maintenant</small>
                 </div>
 
             </div>
 
-
-            <!-- Indicateurs -->
-
-            <section class="dashboard-cards">
+        </section>
 
 
-                <article class="dashboard-card">
+        <!-- Indicateurs principaux -->
+        <section class="dashboard-cards">
 
-                    <div class="card-icon">
-                        🌡️
+            <article class="dashboard-card">
+
+                <div class="card-icon">
+                    🌡️
+                </div>
+
+                <div>
+                    <small>Température moyenne</small>
+                    <strong id="temperature">
+                        21,5 °C
+                    </strong>
+                </div>
+
+                <span class="card-status">
+                    Normal
+                </span>
+
+            </article>
+
+
+            <article class="dashboard-card">
+
+                <div class="card-icon">
+                    💡
+                </div>
+
+                <div>
+                    <small>Éclairage</small>
+                    <strong id="eclairage">
+                        78 %
+                    </strong>
+                </div>
+
+                <span class="card-status">
+                    Actif
+                </span>
+
+            </article>
+
+
+            <article class="dashboard-card">
+
+                <div class="card-icon">
+                    👤
+                </div>
+
+                <div>
+                    <small>Présence détectée</small>
+                    <strong id="presence">
+                        12
+                    </strong>
+                </div>
+
+                <span class="card-status">
+                    Détectée
+                </span>
+
+            </article>
+
+
+            <article class="dashboard-card">
+
+                <div class="card-icon">
+                    📡
+                </div>
+
+                <div>
+                    <small>Réseau</small>
+                    <strong id="reseau">
+                        100 %
+                    </strong>
+                </div>
+
+                <span class="card-status">
+                    Connecté
+                </span>
+
+            </article>
+
+        </section>
+
+
+        <!-- État des salles -->
+        <section class="dashboard-section">
+
+            <h2>État des salles</h2>
+
+            <p class="section-description">
+                Consultez rapidement l'état des différentes zones
+                de l'établissement.
+            </p>
+
+
+            <div class="rooms-grid">
+
+                <article class="room-card">
+
+                    <div class="room-top">
+                        <span class="room-icon">💻</span>
+
+                        <span class="room-online">
+                            ● En ligne
+                        </span>
                     </div>
 
-                    <div>
+                    <h3>Salle CIEL</h3>
 
-                        <small>
-                            Température
-                        </small>
+                    <p>
+                        Température : <strong>21,8 °C</strong>
+                    </p>
 
-                        <strong id="temperature">
-                            21,5 °C
-                        </strong>
-
-                        <p>
-                            Salle CIEL
-                        </p>
-
-                    </div>
+                    <p>
+                        Éclairage : <strong>76 %</strong>
+                    </p>
 
                 </article>
 
 
-                <article class="dashboard-card">
+                <article class="room-card">
 
-                    <div class="card-icon">
-                        💡
+                    <div class="room-top">
+                        <span class="room-icon">🖥️</span>
+
+                        <span class="room-online">
+                            ● En ligne
+                        </span>
                     </div>
 
-                    <div>
+                    <h3>Salle informatique</h3>
 
-                        <small>
-                            Éclairage
-                        </small>
+                    <p>
+                        Température : <strong>22,1 °C</strong>
+                    </p>
 
-                        <strong id="eclairage">
-                            78 %
-                        </strong>
-
-                        <p>
-                            Éclairage actuel
-                        </p>
-
-                    </div>
+                    <p>
+                        Présence : <strong>Détectée</strong>
+                    </p>
 
                 </article>
 
 
-                <article class="dashboard-card">
+                <article class="room-card">
 
-                    <div class="card-icon">
-                        👤
+                    <div class="room-top">
+                        <span class="room-icon">🔧</span>
+
+                        <span class="room-online">
+                            ● En ligne
+                        </span>
                     </div>
 
-                    <div>
+                    <h3>Atelier</h3>
 
-                        <small>
-                            Présence
-                        </small>
+                    <p>
+                        Qualité de l'air : <strong>Bonne</strong>
+                    </p>
 
-                        <strong id="presence">
-                            Détectée
-                        </strong>
-
-                        <p>
-                            Salle informatique
-                        </p>
-
-                    </div>
+                    <p>
+                        Éclairage : <strong>65 %</strong>
+                    </p>
 
                 </article>
 
 
-                <article class="dashboard-card">
+                <article class="room-card">
 
-                    <div class="card-icon">
-                        🌐
+                    <div class="room-top">
+                        <span class="room-icon">🏢</span>
+
+                        <span class="room-online">
+                            ● En ligne
+                        </span>
                     </div>
 
-                    <div>
+                    <h3>Administration</h3>
 
-                        <small>
-                            Réseau
-                        </small>
+                    <p>
+                        Porte : <strong>Fermée</strong>
+                    </p>
 
-                        <strong id="reseau">
-                            100 %
-                        </strong>
-
-                        <p>
-                            Connexion active
-                        </p>
-
-                    </div>
+                    <p>
+                        Réseau : <strong>Connecté</strong>
+                    </p>
 
                 </article>
 
+            </div>
 
-            </section>
+        </section>
 
 
-            <!-- État des salles -->
+        <!-- Accès rapides -->
+        <section class="dashboard-section">
 
-            <section class="dashboard-section">
+            <h2>Accès rapides</h2>
 
-                <div class="section-header">
+            <p class="section-description">
+                Accédez rapidement aux différents modules
+                de Smart School.
+            </p>
 
+
+            <div class="quick-grid">
+
+                <a href="capteurs.html" class="quick-card">
+                    <span>📡</span>
                     <div>
-
-                        <h2>
-                            État des salles
-                        </h2>
-
-                        <p>
-                            Vue rapide des espaces surveillés.
-                        </p>
-
+                        <h3>Capteurs</h3>
+                        <p>Voir les données des capteurs</p>
                     </div>
-
-                    <a href="salles.html">
-                        Voir les salles →
-                    </a>
-
-                </div>
+                </a>
 
 
-                <div class="room-grid">
-
-
-                    <article class="room-card">
-
-                        <span class="room-icon">
-                            💻
-                        </span>
-
-                        <h3>
-                            Salle CIEL
-                        </h3>
-
-                        <p>
-                            Température : 21,8 °C
-                        </p>
-
-                        <span class="status active">
-                            ● Active
-                        </span>
-
-                    </article>
-
-
-                    <article class="room-card">
-
-                        <span class="room-icon">
-                            🖥️
-                        </span>
-
-                        <h3>
-                            Salle informatique
-                        </h3>
-
-                        <p>
-                            Présence détectée
-                        </p>
-
-                        <span class="status active">
-                            ● Active
-                        </span>
-
-                    </article>
-
-
-                    <article class="room-card">
-
-                        <span class="room-icon">
-                            🔧
-                        </span>
-
-                        <h3>
-                            Atelier
-                        </h3>
-
-                        <p>
-                            Qualité de l'air : bonne
-                        </p>
-
-                        <span class="status warning">
-                            ● À surveiller
-                        </span>
-
-                    </article>
-
-
-                    <article class="room-card">
-
-                        <span class="room-icon">
-                            🏢
-                        </span>
-
-                        <h3>
-                            Administration
-                        </h3>
-
-                        <p>
-                            Porte fermée
-                        </p>
-
-                        <span class="status active">
-                            ● Active
-                        </span>
-
-                    </article>
-
-
-                </div>
-
-            </section>
-
-
-            <!-- Accès rapides -->
-
-            <section class="dashboard-section">
-
-                <div class="section-header">
-
+                <a href="energie.html" class="quick-card">
+                    <span>⚡</span>
                     <div>
-
-                        <h2>
-                            Accès rapides
-                        </h2>
-
-                        <p>
-                            Les différentes fonctions de Smart School.
-                        </p>
-
+                        <h3>Énergie</h3>
+                        <p>Suivre la consommation</p>
                     </div>
-
-                </div>
-
-
-                <div class="quick-grid">
+                </a>
 
 
-                    <a href="capteurs.html" class="quick-card">
-
-                        <span>
-                            📡
-                        </span>
-
-                        <strong>
-                            Capteurs
-                        </strong>
-
-                        <small>
-                            Consulter les capteurs
-                        </small>
-
-                    </a>
+                <a href="reseau.html" class="quick-card">
+                    <span>🌐</span>
+                    <div>
+                        <h3>Réseau</h3>
+                        <p>Surveiller le réseau</p>
+                    </div>
+                </a>
 
 
-                    <a href="energie.html" class="quick-card">
-
-                        <span>
-                            ⚡
-                        </span>
-
-                        <strong>
-                            Énergie
-                        </strong>
-
-                        <small>
-                            Suivre la consommation
-                        </small>
-
-                    </a>
+                <a href="securite.html" class="quick-card">
+                    <span>🛡️</span>
+                    <div>
+                        <h3>Sécurité</h3>
+                        <p>État de la sécurité</p>
+                    </div>
+                </a>
 
 
-                    <a href="reseau.html" class="quick-card">
-
-                        <span>
-                            🌐
-                        </span>
-
-                        <strong>
-                            Réseau
-                        </strong>
-
-                        <small>
-                            Surveiller le réseau
-                        </small>
-
-                    </a>
+                <a href="statistiques.html" class="quick-card">
+                    <span>📈</span>
+                    <div>
+                        <h3>Statistiques</h3>
+                        <p>Consulter les statistiques</p>
+                    </div>
+                </a>
 
 
-                    <a href="securite.html" class="quick-card">
+                <a href="alertes.html" class="quick-card">
+                    <span>🚨</span>
+                    <div>
+                        <h3>Alertes</h3>
+                        <p>Voir les alertes du système</p>
+                    </div>
+                </a>
 
-                        <span>
-                            🛡️
-                        </span>
-
-                        <strong>
-                            Sécurité
-                        </strong>
-
-                        <small>
-                            Vérifier la sécurité
-                        </small>
-
-                    </a>
-
-
-                    <a href="statistiques.html" class="quick-card">
-
-                        <span>
-                            📊
-                        </span>
-
-                        <strong>
-                            Statistiques
-                        </strong>
-
-                        <small>
-                            Consulter les données
-                        </small>
-
-                    </a>
-
-
-                    <a href="alertes.html" class="quick-card">
-
-                        <span>
-                            🔔
-                        </span>
-
-                        <strong>
-                            Alertes
-                        </strong>
-
-                        <small>
-                            Voir les alertes
-                        </small>
-
-                    </a>
-
-
-                </div>
-
-            </section>
+            </div>
 
         </section>
 
@@ -462,7 +338,6 @@
 
 
     <!-- Pied de page -->
-
     <footer>
 
         <p>
@@ -470,8 +345,7 @@
         </p>
 
         <p>
-            Établissement scolaire intelligent,
-            connecté et sécurisé
+            Établissement scolaire intelligent, connecté et sécurisé
         </p>
 
     </footer>
@@ -480,5 +354,4 @@
     <script src="dashboard.js"></script>
 
 </body>
-
 </html>
