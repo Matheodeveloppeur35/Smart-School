@@ -1,18 +1,27 @@
-// Smart School
-// Script de la page d'accueil
-
-
-// Bouton "Découvrir le projet"
-
-function decouvrirProjet() {
-
-    alert(
-        "Smart School est un projet CIEL qui combine informatique, réseaux, électronique et cybersécurité."
-    );
-
+function actualiser() {
+    alert("Les données ont été actualisées.");
 }
 
+function ajouter() {
+    alert("Ajout : cette fonction sera développée ensuite.");
+}
 
-// Message dans la console
+function enregistrer() {
+    alert("Paramètres enregistrés pour la démonstration.");
+}
 
-console.log("Smart School est lancé !");
+function connexion() {
+
+    let nom = document.getElementById("nom").value;
+
+    if (nom.trim() !== "") {
+
+        document.getElementById("message").textContent =
+            "Connexion de démonstration réussie.";
+
+    } else {
+
+        document.getElementById("message").textContent =
+            "Veuillez saisir votre nom.";
+    }
+}
