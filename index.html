@@ -1,67 +1,152 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart School</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <main class="main-content">
+    <!-- Barre de navigation -->
+    <header class="navbar">
+        <div class="logo">
+            🏫 <span>Smart School</span>
+        </div>
+
+        <nav>
+            <a href="index.html" class="active">Accueil</a>
+            <a href="#">Tableau de bord</a>
+            <a href="#">Capteurs</a>
+            <a href="#">Alertes</a>
+        </nav>
+
+        <button class="login-btn">Connexion</button>
+    </header>
+
+
+    <!-- Section principale -->
+    <main>
 
         <section class="hero">
+            <div class="hero-text">
 
-            <div>
-
-                <p class="eyebrow">
-                    PROJET CIEL • 2026
-                </p>
+                <span class="badge">🌐 Établissement connecté</span>
 
                 <h1>
-                    Smart School
+                    Bienvenue sur<br>
+                    <strong>Smart School</strong>
                 </h1>
 
                 <p>
-                    Un établissement scolaire intelligent,
-                    connecté et sécurisé.
+                    Une solution intelligente permettant de connecter,
+                    surveiller et gérer les équipements d'un établissement scolaire.
                 </p>
 
-                <p>
-
-                    <a
-                        class="btn primary"
-                        href="dashboard.html">
-
+                <div class="buttons">
+                    <button class="primary-btn">
                         Accéder au tableau de bord →
+                    </button>
 
-                    </a>
-
-                </p>
+                    <button class="secondary-btn">
+                        Découvrir le projet
+                    </button>
+                </div>
 
             </div>
 
-            <div class="hero-card">
+            <!-- Aperçu du système -->
+            <div class="dashboard-preview">
 
-                <img
-                    src="logo-smart-school.png"
-                    alt="Logo Smart School">
+                <div class="preview-header">
+                    <span>Smart School</span>
+                    <span class="online">● En ligne</span>
+                </div>
 
-                <h2>
-                    SMART SCHOOL
-                </h2>
+                <div class="preview-card">
+                    <span>🌡️</span>
+                    <div>
+                        <small>Température</small>
+                        <strong>21,5 °C</strong>
+                    </div>
+                </div>
 
-                <p>
-                    Informatique • Réseaux • Électronique • Cybersécurité
-                </p>
+                <div class="preview-card">
+                    <span>💡</span>
+                    <div>
+                        <small>Éclairage</small>
+                        <strong>78 %</strong>
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <span>👤</span>
+                    <div>
+                        <small>Présence</small>
+                        <strong>Détectée</strong>
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <span>🛡️</span>
+                    <div>
+                        <small>Sécurité</small>
+                        <strong>Protégée</strong>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Fonctionnalités -->
+        <section class="features">
+
+            <h2>Un établissement plus intelligent</h2>
+
+            <p class="section-description">
+                Smart School rassemble informatique, réseaux,
+                électronique et cybersécurité dans un seul projet.
+            </p>
+
+            <div class="feature-grid">
+
+                <article class="feature">
+                    <div class="icon">💡</div>
+                    <h3>Éclairage intelligent</h3>
+                    <p>
+                        Contrôler automatiquement l'éclairage
+                        grâce aux capteurs de présence et de luminosité.
+                    </p>
+                </article>
+
+                <article class="feature">
+                    <div class="icon">🌡️</div>
+                    <h3>Surveillance des salles</h3>
+                    <p>
+                        Suivre la température et différents paramètres
+                        des salles en temps réel.
+                    </p>
+                </article>
+
+                <article class="feature">
+                    <div class="icon">📡</div>
+                    <h3>Réseau connecté</h3>
+                    <p>
+                        Les équipements communiquent entre eux
+                        grâce au réseau de l'établissement.
+                    </p>
+                </article>
+
+                <article class="feature">
+                    <div class="icon">🛡️</div>
+                    <h3>Cybersécurité</h3>
+                    <p>
+                        Protéger les accès, les données et les
+                        équipements connectés.
+                    </p>
+                </article>
 
             </div>
 
@@ -69,6 +154,15 @@
 
     </main>
 
-</body>
 
+    <!-- Pied de page -->
+    <footer>
+        <p>© 2026 Smart School — Projet CIEL</p>
+        <p>Établissement scolaire intelligent, connecté et sécurisé</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
 </html>
