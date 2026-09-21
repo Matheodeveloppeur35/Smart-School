@@ -1,5 +1,9 @@
-// Données utilisées pour le moment
-// Plus tard, elles pourront venir de l'ESP32.
+// ========================================
+// TABLEAU DE BORD — SMART SCHOOL
+// ========================================
+
+
+// Données actuelles du système
 
 let temperature = 21.5;
 let eclairage = 78;
@@ -7,19 +11,22 @@ let presence = 12;
 let reseau = 100;
 
 
-// Fonction pour actualiser les données
+// Actualisation des données
 
 function actualiserDonnees() {
 
-    // Petite variation pour simuler des données réelles
     temperature = (21 + Math.random() * 2).toFixed(1);
 
-    eclairage = Math.floor(70 + Math.random() * 20);
+    eclairage = Math.floor(
+        70 + Math.random() * 20
+    );
 
-    presence = Math.floor(8 + Math.random() * 10);
+    presence = Math.floor(
+        8 + Math.random() * 10
+    );
 
 
-    // Mise à jour de la page
+    // Affichage des nouvelles données
 
     document.getElementById("temperature").textContent =
         temperature + " °C";
@@ -34,10 +41,10 @@ function actualiserDonnees() {
         reseau + " %";
 
 
-    console.log("Données actualisées !");
+    console.log("Données du tableau de bord actualisées.");
 }
 
 
-// Actualisation automatique toutes les 30 secondes
+// Actualisation toutes les 30 secondes
 
 setInterval(actualiserDonnees, 30000);
