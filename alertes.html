@@ -1,0 +1,468 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alertes - Smart School</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== MENU ==================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+
+            <div>
+                <h2>Smart School</h2>
+                <span>Smart Campus</span>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                🏠
+                <span>Accueil</span>
+            </a>
+
+            <a href="index.html#dashboard">
+                📊
+                <span>Tableau de bord</span>
+            </a>
+
+            <a href="capteurs.html">
+                📡
+                <span>Capteurs</span>
+            </a>
+
+            <a href="alertes.html" class="active">
+                🚨
+                <span>Alertes</span>
+            </a>
+
+            <a href="salles.html">
+                🏫
+                <span>Salles</span>
+            </a>
+
+            <a href="energie.html">
+                ⚡
+                <span>Énergie</span>
+            </a>
+
+            <a href="reseau.html">
+                🌐
+                <span>Réseau</span>
+            </a>
+
+            <a href="securite.html">
+                🛡️
+                <span>Sécurité</span>
+            </a>
+
+            <a href="statistiques.html">
+                📈
+                <span>Statistiques</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="parametres.html">
+                ⚙️
+                <span>Paramètres</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==================== CONTENU ==================== -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div>
+                <h1>🚨 Alertes</h1>
+                <p>Surveillance des événements détectés dans l'établissement.</p>
+            </div>
+
+            <div class="status-online">
+                <span></span>
+                Système opérationnel
+            </div>
+
+        </header>
+
+
+        <!-- ==================== STATISTIQUES ==================== -->
+
+        <section class="alert-stats">
+
+            <div class="alert-stat-card critical">
+
+                <div class="stat-icon">
+                    🔴
+                </div>
+
+                <div>
+                    <strong id="criticalCount">2</strong>
+                    <span>Alertes critiques</span>
+                </div>
+
+            </div>
+
+
+            <div class="alert-stat-card warning">
+
+                <div class="stat-icon">
+                    🟠
+                </div>
+
+                <div>
+                    <strong id="warningCount">2</strong>
+                    <span>Alertes importantes</span>
+                </div>
+
+            </div>
+
+
+            <div class="alert-stat-card resolved">
+
+                <div class="stat-icon">
+                    🟢
+                </div>
+
+                <div>
+                    <strong id="resolvedCount">1</strong>
+                    <span>Alertes résolues</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== FILTRES ==================== -->
+
+        <section class="alerts-container">
+
+            <div class="alerts-header">
+
+                <div>
+                    <h2>Liste des alertes</h2>
+                    <p>Les dernières alertes détectées par Smart School.</p>
+                </div>
+
+                <div class="alert-filters">
+
+                    <button class="filter-btn active"
+                        onclick="filterAlerts('all', this)">
+                        Toutes
+                    </button>
+
+                    <button class="filter-btn"
+                        onclick="filterAlerts('critical', this)">
+                        🔴 Critiques
+                    </button>
+
+                    <button class="filter-btn"
+                        onclick="filterAlerts('warning', this)">
+                        🟠 Importantes
+                    </button>
+
+                    <button class="filter-btn"
+                        onclick="filterAlerts('resolved', this)">
+                        🟢 Résolues
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================== ALERTES ==================== -->
+
+            <div id="alertsList">
+
+
+                <!-- ALERTE 1 -->
+
+                <article class="alert-card critical"
+                    data-type="critical">
+
+                    <div class="alert-icon">
+                        🔴
+                    </div>
+
+                    <div class="alert-body">
+
+                        <div class="alert-title">
+
+                            <div>
+                                <span class="alert-badge critical">
+                                    CRITIQUE
+                                </span>
+
+                                <h3>Température élevée</h3>
+                            </div>
+
+                            <time>
+                                Aujourd'hui · 14:32
+                            </time>
+
+                        </div>
+
+                        <p>
+                            Une température anormalement élevée
+                            a été détectée dans la salle E014.
+                        </p>
+
+                        <div class="alert-details">
+
+                            <span>🏫 Salle E014</span>
+
+                            <span>🌡️ 31,8 °C</span>
+
+                            <span>📡 TEMP-014</span>
+
+                        </div>
+
+                        <button class="resolve-btn"
+                            onclick="resolveAlert(this)">
+                            ✓ Marquer comme résolue
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ALERTE 2 -->
+
+                <article class="alert-card critical"
+                    data-type="critical">
+
+                    <div class="alert-icon">
+                        🔴
+                    </div>
+
+                    <div class="alert-body">
+
+                        <div class="alert-title">
+
+                            <div>
+                                <span class="alert-badge critical">
+                                    CRITIQUE
+                                </span>
+
+                                <h3>Capteur hors connexion</h3>
+                            </div>
+
+                            <time>
+                                Aujourd'hui · 13:48
+                            </time>
+
+                        </div>
+
+                        <p>
+                            Le capteur de présence de la salle B102
+                            ne répond plus.
+                        </p>
+
+                        <div class="alert-details">
+
+                            <span>🏫 Salle B102</span>
+
+                            <span>📡 PRES-B102</span>
+
+                            <span>⚠️ Hors connexion</span>
+
+                        </div>
+
+                        <button class="resolve-btn"
+                            onclick="resolveAlert(this)">
+                            ✓ Marquer comme résolue
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ALERTE 3 -->
+
+                <article class="alert-card warning"
+                    data-type="warning">
+
+                    <div class="alert-icon">
+                        🟠
+                    </div>
+
+                    <div class="alert-body">
+
+                        <div class="alert-title">
+
+                            <div>
+                                <span class="alert-badge warning">
+                                    IMPORTANTE
+                                </span>
+
+                                <h3>Consommation électrique élevée</h3>
+                            </div>
+
+                            <time>
+                                Aujourd'hui · 12:15
+                            </time>
+
+                        </div>
+
+                        <p>
+                            La consommation électrique de la salle
+                            informatique est supérieure à la normale.
+                        </p>
+
+                        <div class="alert-details">
+
+                            <span>🏫 Salle informatique</span>
+
+                            <span>⚡ 4,8 kW</span>
+
+                            <span>📈 +32 %</span>
+
+                        </div>
+
+                        <button class="resolve-btn"
+                            onclick="resolveAlert(this)">
+                            ✓ Marquer comme résolue
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ALERTE 4 -->
+
+                <article class="alert-card warning"
+                    data-type="warning">
+
+                    <div class="alert-icon">
+                        🟠
+                    </div>
+
+                    <div class="alert-body">
+
+                        <div class="alert-title">
+
+                            <div>
+                                <span class="alert-badge warning">
+                                    IMPORTANTE
+                                </span>
+
+                                <h3>Présence détectée</h3>
+                            </div>
+
+                            <time>
+                                Aujourd'hui · 10:27
+                            </time>
+
+                        </div>
+
+                        <p>
+                            Une présence a été détectée dans une salle
+                            alors qu'elle devrait être libre.
+                        </p>
+
+                        <div class="alert-details">
+
+                            <span>🏫 Salle C203</span>
+
+                            <span>👤 Présence</span>
+
+                            <span>🕐 10:27</span>
+
+                        </div>
+
+                        <button class="resolve-btn"
+                            onclick="resolveAlert(this)">
+                            ✓ Marquer comme résolue
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ALERTE 5 -->
+
+                <article class="alert-card resolved"
+                    data-type="resolved">
+
+                    <div class="alert-icon">
+                        🟢
+                    </div>
+
+                    <div class="alert-body">
+
+                        <div class="alert-title">
+
+                            <div>
+                                <span class="alert-badge resolved">
+                                    RÉSOLUE
+                                </span>
+
+                                <h3>Fenêtre ouverte</h3>
+                            </div>
+
+                            <time>
+                                Aujourd'hui · 08:42
+                            </time>
+
+                        </div>
+
+                        <p>
+                            Une fenêtre est restée ouverte dans
+                            la salle A201. L'alerte a été traitée.
+                        </p>
+
+                        <div class="alert-details">
+
+                            <span>🏫 Salle A201</span>
+
+                            <span>🪟 Fenêtre</span>
+
+                            <span>✓ Résolue à 09:05</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
