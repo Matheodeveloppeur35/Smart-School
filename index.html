@@ -1,152 +1,1290 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Smart School</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Barre de navigation -->
+    <!-- ================================
+         BARRE DE NAVIGATION
+    ================================= -->
+
     <header class="navbar">
+
         <div class="logo">
             🏫 <span>Smart School</span>
         </div>
 
         <nav>
-            <a href="index.html" class="active">Accueil</a>
-            <a href="dashboard.html">Tableau de bord</a>
-            <a href=">capteurs.html"</a>
-            <a href=">alertes.html"</a>
+            <a href="#accueil" class="nav-link active">Accueil</a>
+            <a href="#dashboard" class="nav-link">Tableau de bord</a>
+            <a href="#capteurs" class="nav-link">Capteurs</a>
+            <a href="#alertes" class="nav-link">Alertes</a>
         </nav>
 
-        <button class="login-btn">Connexion</button>
+        <button class="login-btn" onclick="afficherConnexion()">
+            Connexion
+        </button>
+
     </header>
 
 
-    <!-- Section principale -->
+    <!-- ================================
+         CONTENU PRINCIPAL
+    ================================= -->
+
     <main>
 
-        <section class="hero">
-            <div class="hero-text">
 
-                <span class="badge">🌐 Établissement connecté</span>
+        <!-- =================================
+             ACCUEIL
+        ================================== -->
 
-                <h1>
-                    Bienvenue sur<br>
-                    <strong>Smart School</strong>
-                </h1>
+        <section id="accueil" class="page-section active-section">
 
-                <p>
-                    Une solution intelligente permettant de connecter,
-                    surveiller et gérer les équipements d'un établissement scolaire.
+            <section class="hero">
+
+                <div class="hero-text">
+
+                    <span class="badge">
+                        🌐 Établissement connecté
+                    </span>
+
+                    <h1>
+                        Bienvenue sur<br>
+                        <strong>Smart School</strong>
+                    </h1>
+
+                    <p>
+                        Une solution intelligente permettant de connecter,
+                        surveiller et gérer les équipements d'un établissement scolaire.
+                    </p>
+
+                    <div class="buttons">
+
+                        <button
+                            class="primary-btn"
+                            onclick="afficherSection('dashboard')">
+                            Accéder au tableau de bord →
+                        </button>
+
+                        <button
+                            class="secondary-btn"
+                            onclick="afficherSection('presentation')">
+                            Découvrir le projet
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Aperçu du système -->
+
+                <div class="dashboard-preview">
+
+                    <div class="preview-header">
+
+                        <span>
+                            Smart School
+                        </span>
+
+                        <span class="online">
+                            ● En ligne
+                        </span>
+
+                    </div>
+
+
+                    <div class="preview-card">
+
+                        <span>🌡️</span>
+
+                        <div>
+                            <small>Température</small>
+                            <strong id="accueilTemperature">
+                                21,5 °C
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-card">
+
+                        <span>💡</span>
+
+                        <div>
+                            <small>Éclairage</small>
+                            <strong id="accueilEclairage">
+                                78 %
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-card">
+
+                        <span>👤</span>
+
+                        <div>
+                            <small>Présence</small>
+                            <strong>
+                                Détectée
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-card">
+
+                        <span>🛡️</span>
+
+                        <div>
+                            <small>Sécurité</small>
+                            <strong>
+                                Protégée
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Fonctionnalités -->
+
+            <section class="features">
+
+                <h2>
+                    Un établissement plus intelligent
+                </h2>
+
+                <p class="section-description">
+                    Smart School rassemble informatique, réseaux,
+                    électronique et cybersécurité dans un seul projet.
                 </p>
 
-                <div class="buttons">
-                    <button class="primary-btn">
-                        Accéder au tableau de bord →
-                    </button>
 
-                    <button class="secondary-btn">
-                        Découvrir le projet
-                    </button>
+                <div class="feature-grid">
+
+                    <article class="feature">
+
+                        <div class="icon">
+                            💡
+                        </div>
+
+                        <h3>
+                            Éclairage intelligent
+                        </h3>
+
+                        <p>
+                            Contrôler automatiquement l'éclairage
+                            grâce aux capteurs de présence et de luminosité.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature">
+
+                        <div class="icon">
+                            🌡️
+                        </div>
+
+                        <h3>
+                            Surveillance des salles
+                        </h3>
+
+                        <p>
+                            Suivre la température et différents paramètres
+                            des salles en temps réel.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature">
+
+                        <div class="icon">
+                            📡
+                        </div>
+
+                        <h3>
+                            Réseau connecté
+                        </h3>
+
+                        <p>
+                            Les équipements communiquent entre eux
+                            grâce au réseau de l'établissement.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature">
+
+                        <div class="icon">
+                            🛡️
+                        </div>
+
+                        <h3>
+                            Cybersécurité
+                        </h3>
+
+                        <p>
+                            Protéger les accès, les données et les
+                            équipements connectés.
+                        </p>
+
+                    </article>
+
                 </div>
 
-            </div>
+            </section>
 
-            <!-- Aperçu du système -->
-            <div class="dashboard-preview">
-
-                <div class="preview-header">
-                    <span>Smart School</span>
-                    <span class="online">● En ligne</span>
-                </div>
-
-                <div class="preview-card">
-                    <span>🌡️</span>
-                    <div>
-                        <small>Température</small>
-                        <strong>21,5 °C</strong>
-                    </div>
-                </div>
-
-                <div class="preview-card">
-                    <span>💡</span>
-                    <div>
-                        <small>Éclairage</small>
-                        <strong>78 %</strong>
-                    </div>
-                </div>
-
-                <div class="preview-card">
-                    <span>👤</span>
-                    <div>
-                        <small>Présence</small>
-                        <strong>Détectée</strong>
-                    </div>
-                </div>
-
-                <div class="preview-card">
-                    <span>🛡️</span>
-                    <div>
-                        <small>Sécurité</small>
-                        <strong>Protégée</strong>
-                    </div>
-                </div>
-
-            </div>
         </section>
 
 
-        <!-- Fonctionnalités -->
-        <section class="features">
+        <!-- =================================
+             TABLEAU DE BORD
+        ================================== -->
 
-            <h2>Un établissement plus intelligent</h2>
+        <section id="dashboard" class="page-section">
 
-            <p class="section-description">
-                Smart School rassemble informatique, réseaux,
-                électronique et cybersécurité dans un seul projet.
-            </p>
+            <div class="page-header">
 
-            <div class="feature-grid">
+                <span class="badge">
+                    📊 Supervision
+                </span>
 
-                <article class="feature">
-                    <div class="icon">💡</div>
-                    <h3>Éclairage intelligent</h3>
-                    <p>
-                        Contrôler automatiquement l'éclairage
-                        grâce aux capteurs de présence et de luminosité.
-                    </p>
+                <h1>
+                    Tableau de bord
+                </h1>
+
+                <p>
+                    Visualisez l'état général de l'établissement
+                    et de ses équipements connectés.
+                </p>
+
+            </div>
+
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>
+                        Système opérationnel
+                    </strong>
+
+                    <small>
+                        Tous les systèmes fonctionnent normalement.
+                    </small>
+                </div>
+
+            </div>
+
+
+            <!-- Cartes -->
+
+            <div class="dashboard-cards">
+
+                <article class="dashboard-card">
+
+                    <div class="card-icon">
+                        🌡️
+                    </div>
+
+                    <div>
+                        <small>
+                            Température moyenne
+                        </small>
+
+                        <strong id="temperature">
+                            21,5 °C
+                        </strong>
+                    </div>
+
+                    <span class="card-status">
+                        Normal
+                    </span>
+
                 </article>
 
-                <article class="feature">
-                    <div class="icon">🌡️</div>
-                    <h3>Surveillance des salles</h3>
-                    <p>
-                        Suivre la température et différents paramètres
-                        des salles en temps réel.
-                    </p>
+
+                <article class="dashboard-card">
+
+                    <div class="card-icon">
+                        💡
+                    </div>
+
+                    <div>
+                        <small>
+                            Éclairage
+                        </small>
+
+                        <strong id="eclairage">
+                            78 %
+                        </strong>
+                    </div>
+
+                    <span class="card-status">
+                        Actif
+                    </span>
+
                 </article>
 
-                <article class="feature">
-                    <div class="icon">📡</div>
-                    <h3>Réseau connecté</h3>
-                    <p>
-                        Les équipements communiquent entre eux
-                        grâce au réseau de l'établissement.
-                    </p>
+
+                <article class="dashboard-card">
+
+                    <div class="card-icon">
+                        👤
+                    </div>
+
+                    <div>
+                        <small>
+                            Présence
+                        </small>
+
+                        <strong id="presence">
+                            12
+                        </strong>
+                    </div>
+
+                    <span class="card-status">
+                        Détectée
+                    </span>
+
                 </article>
 
-                <article class="feature">
-                    <div class="icon">🛡️</div>
-                    <h3>Cybersécurité</h3>
-                    <p>
-                        Protéger les accès, les données et les
-                        équipements connectés.
-                    </p>
+
+                <article class="dashboard-card">
+
+                    <div class="card-icon">
+                        📡
+                    </div>
+
+                    <div>
+                        <small>
+                            Réseau
+                        </small>
+
+                        <strong id="reseau">
+                            100 %
+                        </strong>
+                    </div>
+
+                    <span class="card-status">
+                        Connecté
+                    </span>
+
                 </article>
+
+            </div>
+
+
+            <!-- Salles -->
+
+            <div class="content-section">
+
+                <h2>
+                    État des salles
+                </h2>
+
+                <p class="section-description">
+                    Consultez rapidement l'état des différentes zones
+                    de l'établissement.
+                </p>
+
+
+                <div class="rooms-grid">
+
+                    <article class="room-card">
+
+                        <div class="room-top">
+                            <span class="room-icon">
+                                💻
+                            </span>
+
+                            <span class="room-online">
+                                ● En ligne
+                            </span>
+                        </div>
+
+                        <h3>
+                            Salle CIEL
+                        </h3>
+
+                        <p>
+                            Température :
+                            <strong>21,8 °C</strong>
+                        </p>
+
+                        <p>
+                            Éclairage :
+                            <strong>76 %</strong>
+                        </p>
+
+                    </article>
+
+
+                    <article class="room-card">
+
+                        <div class="room-top">
+                            <span class="room-icon">
+                                🖥️
+                            </span>
+
+                            <span class="room-online">
+                                ● En ligne
+                            </span>
+                        </div>
+
+                        <h3>
+                            Salle informatique
+                        </h3>
+
+                        <p>
+                            Température :
+                            <strong>22,1 °C</strong>
+                        </p>
+
+                        <p>
+                            Présence :
+                            <strong>Détectée</strong>
+                        </p>
+
+                    </article>
+
+
+                    <article class="room-card">
+
+                        <div class="room-top">
+                            <span class="room-icon">
+                                🔧
+                            </span>
+
+                            <span class="room-online">
+                                ● En ligne
+                            </span>
+                        </div>
+
+                        <h3>
+                            Atelier
+                        </h3>
+
+                        <p>
+                            Qualité de l'air :
+                            <strong>Bonne</strong>
+                        </p>
+
+                        <p>
+                            Éclairage :
+                            <strong>65 %</strong>
+                        </p>
+
+                    </article>
+
+
+                    <article class="room-card">
+
+                        <div class="room-top">
+                            <span class="room-icon">
+                                🏢
+                            </span>
+
+                            <span class="room-online">
+                                ● En ligne
+                            </span>
+                        </div>
+
+                        <h3>
+                            Administration
+                        </h3>
+
+                        <p>
+                            Porte :
+                            <strong>Fermée</strong>
+                        </p>
+
+                        <p>
+                            Réseau :
+                            <strong>Connecté</strong>
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- Accès rapides -->
+
+            <div class="content-section">
+
+                <h2>
+                    Accès rapides
+                </h2>
+
+                <p class="section-description">
+                    Accédez aux différents modules de Smart School.
+                </p>
+
+
+                <div class="quick-grid">
+
+                    <button
+                        class="quick-card"
+                        onclick="afficherSection('capteurs')">
+
+                        <span>📡</span>
+
+                        <div>
+                            <h3>Capteurs</h3>
+                            <p>
+                                Voir les données des capteurs
+                            </p>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        onclick="afficherSection('energie')">
+
+                        <span>⚡</span>
+
+                        <div>
+                            <h3>Énergie</h3>
+                            <p>
+                                Suivre la consommation
+                            </p>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        onclick="afficherSection('reseau')">
+
+                        <span>🌐</span>
+
+                        <div>
+                            <h3>Réseau</h3>
+                            <p>
+                                Surveiller le réseau
+                            </p>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        onclick="afficherSection('securite')">
+
+                        <span>🛡️</span>
+
+                        <div>
+                            <h3>Sécurité</h3>
+                            <p>
+                                État de la sécurité
+                            </p>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        onclick="afficherSection('statistiques')">
+
+                        <span>📈</span>
+
+                        <div>
+                            <h3>Statistiques</h3>
+                            <p>
+                                Consulter les statistiques
+                            </p>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        onclick="afficherSection('alertes')">
+
+                        <span>🚨</span>
+
+                        <div>
+                            <h3>Alertes</h3>
+                            <p>
+                                Voir les alertes
+                            </p>
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             CAPTEURS
+        ================================== -->
+
+        <section id="capteurs" class="page-section">
+
+            <div class="page-header">
+
+                <span class="badge">
+                    📡 Surveillance
+                </span>
+
+                <h1>
+                    Capteurs
+                </h1>
+
+                <p>
+                    Consultez les informations envoyées par les
+                    différents capteurs de l'établissement.
+                </p>
+
+            </div>
+
+
+            <div class="sensor-summary">
+
+                <article>
+                    <strong>20</strong>
+                    <span>Capteurs installés</span>
+                </article>
+
+                <article>
+                    <strong>18</strong>
+                    <span>Capteurs actifs</span>
+                </article>
+
+                <article>
+                    <strong>2</strong>
+                    <span>À surveiller</span>
+                </article>
+
+                <article>
+                    <strong>0</strong>
+                    <span>Hors ligne</span>
+                </article>
+
+            </div>
+
+
+            <div class="sensor-grid">
+
+                <article class="sensor-card">
+
+                    <span class="sensor-icon">
+                        🌡️
+                    </span>
+
+                    <div>
+                        <h3>
+                            Température
+                        </h3>
+
+                        <p>
+                            Salle CIEL • ESP32-01
+                        </p>
+
+                        <strong id="capteurTemperature">
+                            21,8 °C
+                        </strong>
+                    </div>
+
+                    <span class="sensor-active">
+                        Actif
+                    </span>
+
+                </article>
+
+
+                <article class="sensor-card">
+
+                    <span class="sensor-icon">
+                        💡
+                    </span>
+
+                    <div>
+                        <h3>
+                            Luminosité
+                        </h3>
+
+                        <p>
+                            Salle CIEL • ESP32-01
+                        </p>
+
+                        <strong id="luminosite">
+                            76 %
+                        </strong>
+                    </div>
+
+                    <span class="sensor-active">
+                        Actif
+                    </span>
+
+                </article>
+
+
+                <article class="sensor-card">
+
+                    <span class="sensor-icon">
+                        👤
+                    </span>
+
+                    <div>
+                        <h3>
+                            Présence
+                        </h3>
+
+                        <p>
+                            Salle informatique • ESP32-02
+                        </p>
+
+                        <strong>
+                            Présence détectée
+                        </strong>
+                    </div>
+
+                    <span class="sensor-active">
+                        Actif
+                    </span>
+
+                </article>
+
+
+                <article class="sensor-card">
+
+                    <span class="sensor-icon">
+                        🚪
+                    </span>
+
+                    <div>
+                        <h3>
+                            Ouverture
+                        </h3>
+
+                        <p>
+                            Administration • ESP32-03
+                        </p>
+
+                        <strong>
+                            Porte fermée
+                        </strong>
+                    </div>
+
+                    <span class="sensor-active">
+                        Actif
+                    </span>
+
+                </article>
+
+
+                <article class="sensor-card">
+
+                    <span class="sensor-icon">
+                        🌬️
+                    </span>
+
+                    <div>
+                        <h3>
+                            Qualité de l'air
+                        </h3>
+
+                        <p>
+                            Atelier • ESP32-04
+                        </p>
+
+                        <strong>
+                            Bonne
+                        </strong>
+                    </div>
+
+                    <span class="sensor-warning">
+                        Attention
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             ALERTES
+        ================================== -->
+
+        <section id="alertes" class="page-section">
+
+            <div class="page-header">
+
+                <span class="badge">
+                    🚨 Surveillance
+                </span>
+
+                <h1>
+                    Alertes
+                </h1>
+
+                <p>
+                    Retrouvez les événements et alertes détectés
+                    par le système Smart School.
+                </p>
+
+            </div>
+
+
+            <div class="alerts-list">
+
+                <article class="alert-card warning">
+
+                    <span>
+                        ⚠️
+                    </span>
+
+                    <div>
+                        <h3>
+                            Qualité de l'air à surveiller
+                        </h3>
+
+                        <p>
+                            Une valeur inhabituelle a été détectée
+                            dans l'atelier.
+                        </p>
+
+                        <small>
+                            Aujourd'hui • 14:32
+                        </small>
+                    </div>
+
+                </article>
+
+
+                <article class="alert-card success">
+
+                    <span>
+                        ✅
+                    </span>
+
+                    <div>
+                        <h3>
+                            Système opérationnel
+                        </h3>
+
+                        <p>
+                            Tous les équipements connectés répondent
+                            correctement.
+                        </p>
+
+                        <small>
+                            Aujourd'hui • 14:15
+                        </small>
+                    </div>
+
+                </article>
+
+
+                <article class="alert-card info">
+
+                    <span>
+                        📡
+                    </span>
+
+                    <div>
+                        <h3>
+                            Synchronisation effectuée
+                        </h3>
+
+                        <p>
+                            Les données des ESP32 ont été actualisées.
+                        </p>
+
+                        <small>
+                            Aujourd'hui • 14:00
+                        </small>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             ÉNERGIE
+        ================================== -->
+
+        <section id="energie" class="page-section">
+
+            <div class="page-header">
+
+                <span class="badge">
+                    ⚡ Gestion énergétique
+                </span>
+
+                <h1>
+                    Énergie
+                </h1>
+
+                <p>
+                    Suivez la consommation énergétique de
+                    l'établissement.
+                </p>
+
+            </div>
+
+
+            <div class="energy-grid">
+
+                <article class="energy-card">
+
+                    <span>
+                        💡
+                    </span>
+
+                    <small>
+                        Éclairage
+                    </small>
+
+                    <strong>
+                        78 %
+                    </strong>
+
+                </article>
+
+
+                <article class="energy-card">
+
+                    <span>
+                        ⚡
+                    </span>
+
+                    <small>
+                        Consommation actuelle
+                    </small>
+
+                    <strong>
+                        4,8 kW
+                    </strong>
+
+                </article>
+
+
+                <article class="energy-card">
+
+                    <span>
+                        🌱
+                    </span>
+
+                    <small>
+                        Économie estimée
+                    </small>
+
+                    <strong>
+                        18 %
+                    </strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             RÉSEAU
+        ================================== -->
+
+        <section id="reseau" class="page-section">
+
+            <div class="page-header">
+
+                <span class="badge">
+                    🌐 Infrastructure réseau
+                </span>
+
+                <h1>
+                    Réseau
+                </h1>
+
+                <p>
+                    Surveillez les équipements et les connexions
+                    du réseau Smart School.
+                </p>
+
+            </div>
+
+
+            <div class="network-grid">
+
+                <article class="network-card">
+                    <span>📡</span>
+                    <strong>4</strong>
+                    <small>ESP32 connectés</small>
+                </article>
+
+                <article class="network-card">
+                    <span>🟢</span>
+                    <strong>100 %</strong>
+                    <small>Disponibilité</small>
+                </article>
+
+                <article class="network-card">
+                    <span>📶</span>
+                    <strong>Wi-Fi</strong>
+                    <small>Connexion active</small>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             SÉCURITÉ
+        ================================== -->
+
+        <section id="securite" class="page-section">
+
+            <div class="page-header">
+
+                <span class="badge">
+                    🛡️ Cybersécurité
+                </span>
+
+                <h1>
+                    Sécurité
+                </h1>
+
+                <p>
+                    Surveillez la sécurité des équipements et
+                    des accès au système.
+                </p>
+
+            </div>
+
+
+            <div class="security-card">
+
+                <span class="security-icon">
+                    🛡️
+                </span>
+
+                <div>
+
+                    <h2>
+                        Système sécurisé
+                    </h2>
+
+                    <p>
+                        Aucun problème de sécurité détecté.
+                    </p>
+
+                    <ul>
+                        <li>Authentification active</li>
+                        <li>Équipements surveillés</li>
+                        <li>Réseau opérationnel</li>
+                        <li>Journalisation active</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             STATISTIQUES
+        ================================== -->
+
+        <section id="statistiques" class="page-section">
+
+            <div class="page-header">
+
+                <span class="badge">
+                    📈 Analyse
+                </span>
+
+                <h1>
+                    Statistiques
+                </h1>
+
+                <p>
+                    Analysez les principales données de
+                    Smart School.
+                </p>
+
+            </div>
+
+
+            <div class="statistics-list">
+
+                <div class="statistic">
+
+                    <div>
+                        <span>
+                            Éclairage moyen
+                        </span>
+
+                        <strong>
+                            78 %
+                        </strong>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width: 78%;"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="statistic">
+
+                    <div>
+                        <span>
+                            Disponibilité réseau
+                        </span>
+
+                        <strong>
+                            100 %
+                        </strong>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width: 100%;"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="statistic">
+
+                    <div>
+                        <span>
+                            Capteurs actifs
+                        </span>
+
+                        <strong>
+                            90 %
+                        </strong>
+                    </div>
+
+                    <div class="progress">
+                        <div style="width: 90%;"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             PRÉSENTATION DU PROJET
+        ================================== -->
+
+        <section id="presentation" class="page-section">
+
+            <div class="page-header">
+
+                <span class="badge">
+                    🎓 Projet CIEL
+                </span>
+
+                <h1>
+                    Présentation du projet
+                </h1>
+
+                <p>
+                    Smart School est un projet qui rassemble
+                    informatique, réseaux, électronique et
+                    cybersécurité.
+                </p>
+
+            </div>
+
+
+            <div class="presentation-card">
+
+                <h2>
+                    Notre objectif
+                </h2>
+
+                <p>
+                    Comment utiliser l'informatique, les réseaux
+                    et l'électronique pour rendre un établissement
+                    scolaire plus intelligent, plus économe en
+                    énergie et plus sécurisé ?
+                </p>
+
+
+                <h2>
+                    Le fonctionnement
+                </h2>
+
+                <p>
+                    Des capteurs connectés à des ESP32 récupèrent
+                    différentes informations dans l'établissement.
+                    Ces données peuvent ensuite être affichées
+                    sur le tableau de bord Smart School.
+                </p>
+
+
+                <div class="project-grid">
+
+                    <div>
+                        💻
+                        <strong>Informatique</strong>
+                    </div>
+
+                    <div>
+                        🌐
+                        <strong>Réseaux</strong>
+                    </div>
+
+                    <div>
+                        🔌
+                        <strong>Électronique</strong>
+                    </div>
+
+                    <div>
+                        🛡️
+                        <strong>Cybersécurité</strong>
+                    </div>
+
+                </div>
 
             </div>
 
@@ -155,10 +1293,56 @@
     </main>
 
 
-    <!-- Pied de page -->
+    <!-- ================================
+         FENÊTRE CONNEXION
+    ================================= -->
+
+    <div
+        id="connexion"
+        class="modal">
+
+        <div class="modal-content">
+
+            <button
+                class="close-modal"
+                onclick="fermerConnexion()">
+                ×
+            </button>
+
+            <h2>
+                Connexion
+            </h2>
+
+            <p>
+                Cette fonctionnalité sera ajoutée
+                prochainement.
+            </p>
+
+            <button
+                class="primary-btn"
+                onclick="fermerConnexion()">
+                Fermer
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         PIED DE PAGE
+    ================================= -->
+
     <footer>
-        <p>© 2026 Smart School — Projet CIEL</p>
-        <p>Établissement scolaire intelligent, connecté et sécurisé</p>
+
+        <p>
+            © 2026 Smart School — Projet CIEL
+        </p>
+
+        <p>
+            Établissement scolaire intelligent, connecté et sécurisé
+        </p>
+
     </footer>
 
 
