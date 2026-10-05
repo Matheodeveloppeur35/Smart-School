@@ -1,164 +1,245 @@
-function actualiser() {
-    alert("Les données ont été actualisées.");
-}
-
-function ajouter() {
-    alert("Ajout : cette fonction sera développée ensuite.");
-}
-
-function enregistrer() {
-    alert("Paramètres enregistrés pour la démonstration.");
-}
-
-function connexion() {
-
-    let nom = document.getElementById("nom").value;
-
-    if (nom.trim() !== "") {
-
-        document.getElementById("message").textContent =
-            "Connexion de démonstration réussie.";
-
-    } else {
-
-        document.getElementById("message").textContent =
-            "Veuillez saisir votre nom.";
-    }
-}
-/* =====================================================
-   SMART SCHOOL - ALERTES
-   ===================================================== */
+/* ========================================
+   SMART SCHOOL
+   Navigation principale
+======================================== */
 
 
-/* =========================
-   FILTRER LES ALERTES
-   ========================= */
+function afficherSection(id) {
 
-function filterAlerts(type, button) {
+    // Récupération de toutes les sections
 
-    const alerts = document.querySelectorAll(".alert-card");
-    const buttons = document.querySelectorAll(".filter-btn");
+    const sections = document.querySelectorAll(".page-section");
 
-    // Changer le bouton actif
-    buttons.forEach(btn => {
-        btn.classList.remove("active");
+
+    // Masquer toutes les sections
+
+    sections.forEach(function(section) {
+
+        section.classList.remove("active-section");
+
     });
 
-    button.classList.add("active");
 
-    // Afficher / masquer les alertes
-    alerts.forEach(alert => {
+    // Afficher la section demandée
 
-        if (type === "all") {
-            alert.style.display = "flex";
-        }
+    const section = document.getElementById(id);
 
-        else if (alert.dataset.type === type) {
-            alert.style.display = "flex";
-        }
+    if (section) {
 
-        else {
-            alert.style.display = "none";
-        }
+        section.classList.add("active-section");
 
+    }
+
+
+    // Mettre à jour le menu
+
+    const liens = document.querySelectorAll(".nav-link");
+
+    liens.forEach(function(lien) {
+
+        lien.classList.remove("active");
+
+    });
+
+
+    const lienActif = document.querySelector(
+        '.nav-link[href="#' + id + '"]'
+    );
+
+    if (lienActif) {
+
+        lienActif.classList.add("active");
+
+    }
+
+
+    // Remonter en haut de la page
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
 }
 
 
-/* =========================
-   MARQUER UNE ALERTE
-   COMME RÉSOLUE
-   ========================= */
+/* ========================================
+   Navigation avec les liens
+======================================== */
 
-function resolveAlert(button) {
+document.querySelectorAll(".nav-link").forEach(function(lien) {
 
-    const alert = button.closest(".alert-card");
+    lien.addEventListener("click", function(event) {
 
-    if (!alert) return;
+        event.preventDefault();
 
-    // Changer le type
-    alert.dataset.type = "resolved";
+        const id = lien.getAttribute("href").substring(1);
 
-    // Changer les classes
-    alert.classList.remove("critical");
-    alert.classList.remove("warning");
-    alert.classList.add("resolved");
+        afficherSection(id);
 
-    // Changer l'icône
-    const icon = alert.querySelector(".alert-icon");
-
-    if (icon) {
-        icon.textContent = "🟢";
-    }
-
-    // Changer le badge
-    const badge = alert.querySelector(".alert-badge");
-
-    if (badge) {
-        badge.className = "alert-badge resolved";
-        badge.textContent = "RÉSOLUE";
-    }
-
-    // Supprimer le bouton
-    button.remove();
-
-    // Mettre à jour les compteurs
-    updateAlertCounters();
-}
-
-
-/* =========================
-   COMPTEURS
-   ========================= */
-
-function updateAlertCounters() {
-
-    const criticalCount =
-        document.querySelectorAll(
-            '.alert-card[data-type="critical"]'
-        ).length;
-
-    const warningCount =
-        document.querySelectorAll(
-            '.alert-card[data-type="warning"]'
-        ).length;
-
-    const resolvedCount =
-        document.querySelectorAll(
-            '.alert-card[data-type="resolved"]'
-        ).length;
-
-
-    const criticalElement =
-        document.getElementById("criticalCount");
-
-    const warningElement =
-        document.getElementById("warningCount");
-
-    const resolvedElement =
-        document.getElementById("resolvedCount");
-
-
-    if (criticalElement) {
-        criticalElement.textContent = criticalCount;
-    }
-
-    if (warningElement) {
-        warningElement.textContent = warningCount;
-    }
-
-    if (resolvedElement) {
-        resolvedElement.textContent = resolvedCount;
-    }
-}
-
-
-/* =========================
-   INITIALISATION
-   ========================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    updateAlertCounters();
+    });
 
 });
+
+
+/* ========================================
+   Connexion
+======================================== */
+
+function afficherConnexion() {
+
+    const modal = document.getElementById("connexion");
+
+    if (modal) {
+
+        modal.classList.add("modal-visible");
+
+    }
+
+}
+
+
+function fermerConnexion() {
+
+    const modal = document.getElementById("connexion");
+
+    if (modal) {
+
+        modal.classList.remove("modal-visible");
+
+    }
+
+}
+
+
+/* ========================================
+   Données simulées
+======================================== */
+
+function actualiserDonnees() {
+
+    const temperature =
+        (21 + Math.random() * 2).toFixed(1);
+
+    const eclairage =
+        Math.floor(70 + Math.random() * 20);
+
+    const presence =
+        Math.floor(8 + Math.random() * 10);
+
+
+    // Tableau de bord
+
+    const temperatureElement =
+        document.getElementById("temperature");
+
+    const eclairageElement =
+        document.getElementById("eclairage");
+
+    const presenceElement =
+        document.getElementById("presence");
+
+
+    if (temperatureElement) {
+
+        temperatureElement.textContent =
+            temperature + " °C";
+
+    }
+
+
+    if (eclairageElement) {
+
+        eclairageElement.textContent =
+            eclairage + " %";
+
+    }
+
+
+    if (presenceElement) {
+
+        presenceElement.textContent =
+            presence;
+
+    }
+
+
+    // Aperçu de l'accueil
+
+    const accueilTemperature =
+        document.getElementById("accueilTemperature");
+
+    const accueilEclairage =
+        document.getElementById("accueilEclairage");
+
+
+    if (accueilTemperature) {
+
+        accueilTemperature.textContent =
+            temperature + " °C";
+
+    }
+
+
+    if (accueilEclairage) {
+
+        accueilEclairage.textContent =
+            eclairage + " %";
+
+    }
+
+
+    // Capteur de température
+
+    const capteurTemperature =
+        document.getElementById("capteurTemperature");
+
+
+    if (capteurTemperature) {
+
+        capteurTemperature.textContent =
+            temperature + " °C";
+
+    }
+
+}
+
+
+/* Actualisation toutes les 30 secondes */
+
+setInterval(
+    actualiserDonnees,
+    30000
+);
+
+
+/* ========================================
+   Ouverture d'une section avec l'URL
+======================================== */
+
+function chargerSectionDepuisURL() {
+
+    const hash =
+        window.location.hash.substring(1);
+
+
+    if (hash) {
+
+        const section =
+            document.getElementById(hash);
+
+
+        if (section) {
+
+            afficherSection(hash);
+
+        }
+
+    }
+
+}
+
+
+window.addEventListener(
+    "load",
+    chargerSectionDepuisURL
+);
