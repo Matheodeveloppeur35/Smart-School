@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Réseau - Smart School</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Barre de navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            🏫 <span>Smart School</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="index.html#dashboard">Tableau de bord</a>
+            <a href="index.html#capteurs">Capteurs</a>
+            <a href="index.html#alertes">Alertes</a>
+            <a href="energie.html">Énergie</a>
+            <a href="salles.html">Salles</a>
+            <a href="reseau.html" class="active">Réseau</a>
+        </nav>
+
+        <button class="login-btn">Connexion</button>
+
+    </header>
+
+
+    <!-- Contenu de la page -->
+    <main class="network-page">
+
+        <!-- Présentation -->
+        <section class="network-header">
+
+            <div>
+                <span class="badge">📡 Réseau connecté</span>
+
+                <h1>État du réseau</h1>
+
+                <p>
+                    Consultez l'état des équipements connectés au réseau
+                    de l'établissement.
+                </p>
+            </div>
+
+            <div class="network-status">
+                <span></span>
+                Réseau actif
+            </div>
+
+        </section>
+
+
+        <!-- Statistiques -->
+        <section class="network-stats">
+
+            <article class="network-stat-card">
+                <div class="network-stat-icon">🖥️</div>
+
+                <div>
+                    <strong>12</strong>
+                    <small>Équipements connectés</small>
+                </div>
+            </article>
+
+            <article class="network-stat-card">
+                <div class="network-stat-icon">📶</div>
+
+                <div>
+                    <strong>98 %</strong>
+                    <small>Disponibilité du réseau</small>
+                </div>
+            </article>
+
+            <article class="network-stat-card">
+                <div class="network-stat-icon">⚡</div>
+
+                <div>
+                    <strong>24 ms</strong>
+                    <small>Temps de réponse</small>
+                </div>
+            </article>
+
+            <article class="network-stat-card">
+                <div class="network-stat-icon">⚠️</div>
+
+                <div>
+                    <strong>1</strong>
+                    <small>Équipement à vérifier</small>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- Équipements et informations réseau -->
+        <section class="network-content">
+
+            <!-- Liste des équipements -->
+            <article class="network-panel">
+
+                <h2>Équipements du réseau</h2>
+
+                <p class="network-panel-description">
+                    État des principaux appareils utilisés dans le projet.
+                </p>
+
+                <div class="network-device">
+                    <div class="network-device-icon">📡</div>
+
+                    <div class="network-device-info">
+                        <strong>ESP32 - Salle 101</strong>
+                        <small>Capteurs de température et de présence</small>
+                    </div>
+
+                    <span class="device-state online">En ligne</span>
+                </div>
+
+                <div class="network-device">
+                    <div class="network-device-icon">🌡️</div>
+
+                    <div class="network-device-info">
+                        <strong>Capteur - Laboratoire 201</strong>
+                        <small>Dernier signal reçu il y a 2 minutes</small>
+                    </div>
+
+                    <span class="device-state warning">À vérifier</span>
+                </div>
+
+                <div class="network-device">
+                    <div class="network-device-icon">💡</div>
+
+                    <div class="network-device-info">
+                        <strong>Éclairage - Salle 202</strong>
+                        <small>Commande connectée</small>
+                    </div>
+
+                    <span class="device-state online">En ligne</span>
+                </div>
+
+                <div class="network-device">
+                    <div class="network-device-icon">🖥️</div>
+
+                    <div class="network-device-info">
+                        <strong>Ordinateur de contrôle</strong>
+                        <small>Connexion au tableau de bord</small>
+                    </div>
+
+                    <span class="device-state offline">Hors ligne</span>
+                </div>
+
+            </article>
+
+
+            <!-- Informations sur le réseau -->
+            <article class="network-panel">
+
+                <h2>Informations réseau</h2>
+
+                <p class="network-panel-description">
+                    Exemple d'informations qui pourront être suivies par le système.
+                </p>
+
+                <div class="network-info-list">
+
+                    <div class="network-info-row">
+                        <span>Nom du réseau</span>
+                        <strong>SmartSchool-WiFi</strong>
+                    </div>
+
+                    <div class="network-info-row">
+                        <span>Type de connexion</span>
+                        <strong>Wi-Fi</strong>
+                    </div>
+
+                    <div class="network-info-row">
+                        <span>Adresse IP de démonstration</span>
+                        <strong>192.168.1.25</strong>
+                    </div>
+
+                    <div class="network-info-row">
+                        <span>Qualité du signal</span>
+
+                        <div class="signal-line">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="network-info-row">
+                        <span>Dernière actualisation</span>
+                        <strong>Il y a 1 minute</strong>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- Tableau des connexions -->
+        <section class="network-table-panel">
+
+            <h2>Dernières connexions</h2>
+
+            <p>
+                Exemples de connexions enregistrées par le système.
+            </p>
+
+            <div class="network-table-wrapper">
+
+                <table class="network-table">
+
+                    <thead>
+                        <tr>
+                            <th>Équipement</th>
+                            <th>Salle</th>
+                            <th>Adresse IP</th>
+                            <th>Dernière connexion</th>
+                            <th>État</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>ESP32</td>
+                            <td>Salle 101</td>
+                            <td>192.168.1.31</td>
+                            <td>À l'instant</td>
+                            <td><span class="device-state online">En ligne</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Capteur température</td>
+                            <td>Laboratoire 201</td>
+                            <td>192.168.1.32</td>
+                            <td>Il y a 2 minutes</td>
+                            <td><span class="device-state warning">À vérifier</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Commande éclairage</td>
+                            <td>Salle 202</td>
+                            <td>192.168.1.40</td>
+                            <td>Il y a 5 minutes</td>
+                            <td><span class="device-state online">En ligne</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Ordinateur de contrôle</td>
+                            <td>Accueil</td>
+                            <td>192.168.1.10</td>
+                            <td>Il y a 20 minutes</td>
+                            <td><span class="device-state offline">Hors ligne</span></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Information sur la sécurité -->
+        <section class="network-security">
+
+            <div class="network-security-icon">🛡️</div>
+
+            <div>
+                <h3>Sécurité du réseau</h3>
+
+                <p>
+                    Cette page affiche des données de démonstration.
+                    Dans une prochaine étape, le système pourra vérifier
+                    les équipements connectés et signaler les connexions inhabituelles.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Pied de page -->
+    <footer>
+        <p>© 2026 Smart School — Projet CIEL</p>
+        <p>Établissement scolaire intelligent, connecté et sécurisé</p>
+    </footer>
+
+</body>
+
+</html>
