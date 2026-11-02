@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Salles - Smart School</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Barre de navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            🏫 <span>Smart School</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="index.html#dashboard">Tableau de bord</a>
+            <a href="index.html#capteurs">Capteurs</a>
+            <a href="index.html#alertes">Alertes</a>
+            <a href="salles.html" class="active">Salles</a>
+        </nav>
+
+        <button class="login-btn">Connexion</button>
+
+    </header>
+
+
+    <!-- Contenu principal -->
+    <main class="salles-page">
+
+        <!-- Présentation de la page -->
+        <section class="salles-header">
+
+            <div>
+                <span class="badge">🏫 Gestion des salles</span>
+
+                <h1>Les salles de l'établissement</h1>
+
+                <p>
+                    Consultez les informations des différentes salles
+                    et vérifiez leur température, leur éclairage et leur occupation.
+                </p>
+            </div>
+
+            <div class="status-online">
+                <span></span>
+                Système connecté
+            </div>
+
+        </section>
+
+
+        <!-- Statistiques -->
+        <section class="salles-stats">
+
+            <article class="salle-stat-card">
+                <div class="salle-stat-icon">🏫</div>
+
+                <div>
+                    <strong>6</strong>
+                    <span>Salles surveillées</span>
+                </div>
+            </article>
+
+            <article class="salle-stat-card">
+                <div class="salle-stat-icon">👤</div>
+
+                <div>
+                    <strong>3</strong>
+                    <span>Salles occupées</span>
+                </div>
+            </article>
+
+            <article class="salle-stat-card">
+                <div class="salle-stat-icon">✅</div>
+
+                <div>
+                    <strong>5</strong>
+                    <span>Salles normales</span>
+                </div>
+            </article>
+
+            <article class="salle-stat-card">
+                <div class="salle-stat-icon">⚠️</div>
+
+                <div>
+                    <strong>1</strong>
+                    <span>Salle en alerte</span>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- Filtres -->
+        <section class="salles-tools">
+
+            <div>
+                <h2>État des salles</h2>
+
+                <p>
+                    Les informations sont actuellement simulées.
+                </p>
+            </div>
+
+            <div class="salles-filters">
+                <button class="salle-filter active" data-filter="all">
+                    Toutes
+                </button>
+
+                <button class="salle-filter" data-filter="occupied">
+                    Occupées
+                </button>
+
+                <button class="salle-filter" data-filter="free">
+                    Libres
+                </button>
+
+                <button class="salle-filter" data-filter="alert">
+                    En alerte
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- Liste des salles -->
+        <section class="salles-grid">
+
+            <!-- Salle 101 -->
+            <article class="salle-card" data-status="occupied">
+
+                <div class="salle-card-header">
+                    <div>
+                        <span class="salle-type">Salle informatique</span>
+                        <h2>Salle 101</h2>
+                    </div>
+
+                    <span class="salle-status occupied">
+                        Occupée
+                    </span>
+                </div>
+
+                <div class="salle-information">
+
+                    <div class="salle-info">
+                        <span>🌡️</span>
+
+                        <div>
+                            <small>Température</small>
+                            <strong>21,5 °C</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>💡</span>
+
+                        <div>
+                            <small>Éclairage</small>
+                            <strong>Allumé</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>👥</span>
+
+                        <div>
+                            <small>Présence</small>
+                            <strong>18 personnes</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>💨</span>
+
+                        <div>
+                            <small>Qualité de l'air</small>
+                            <strong>Bonne</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="details-btn" onclick="afficherDetails('Salle 101')">
+                    Voir les détails
+                </button>
+
+            </article>
+
+
+            <!-- Salle 102 -->
+            <article class="salle-card" data-status="free">
+
+                <div class="salle-card-header">
+                    <div>
+                        <span class="salle-type">Salle de cours</span>
+                        <h2>Salle 102</h2>
+                    </div>
+
+                    <span class="salle-status free">
+                        Libre
+                    </span>
+                </div>
+
+                <div class="salle-information">
+
+                    <div class="salle-info">
+                        <span>🌡️</span>
+
+                        <div>
+                            <small>Température</small>
+                            <strong>19,8 °C</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>💡</span>
+
+                        <div>
+                            <small>Éclairage</small>
+                            <strong>Éteint</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>👥</span>
+
+                        <div>
+                            <small>Présence</small>
+                            <strong>Aucune</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>💨</span>
+
+                        <div>
+                            <small>Qualité de l'air</small>
+                            <strong>Bonne</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="details-btn" onclick="afficherDetails('Salle 102')">
+                    Voir les détails
+                </button>
+
+            </article>
+
+
+            <!-- Laboratoire -->
+            <article class="salle-card alert-card-room" data-status="alert">
+
+                <div class="salle-card-header">
+                    <div>
+                        <span class="salle-type">Laboratoire électronique</span>
+                        <h2>Laboratoire 201</h2>
+                    </div>
+
+                    <span class="salle-status alert">
+                        Alerte
+                    </span>
+                </div>
+
+                <div class="salle-information">
+
+                    <div class="salle-info temperature-alert">
+                        <span>🌡️</span>
+
+                        <div>
+                            <small>Température</small>
+                            <strong>28,7 °C</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>💡</span>
+
+                        <div>
+                            <small>Éclairage</small>
+                            <strong>Allumé</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>👥</span>
+
+                        <div>
+                            <small>Présence</small>
+                            <strong>12 personnes</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>💨</span>
+
+                        <div>
+                            <small>Qualité de l'air</small>
+                            <strong>Moyenne</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="room-warning">
+                    ⚠️ La température de cette salle est trop élevée.
+                </p>
+
+                <button class="details-btn" onclick="afficherDetails('Laboratoire 201')">
+                    Voir les détails
+                </button>
+
+            </article>
+
+
+            <!-- Salle réseau -->
+            <article class="salle-card" data-status="occupied">
+
+                <div class="salle-card-header">
+                    <div>
+                        <span class="salle-type">Salle réseau</span>
+                        <h2>Salle 202</h2>
+                    </div>
+
+                    <span class="salle-status occupied">
+                        Occupée
+                    </span>
+                </div>
+
+                <div class="salle-information">
+
+                    <div class="salle-info">
+                        <span>🌡️</span>
+
+                        <div>
+                            <small>Température</small>
+                            <strong>20,2 °C</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>💡</span>
+
+                        <div>
+                            <small>Éclairage</small>
+                            <strong>Allumé</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>👥</span>
+
+                        <div>
+                            <small>Présence</small>
+                            <strong>8 personnes</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>📡</span>
+
+                        <div>
+                            <small>Réseau</small>
+                            <strong>Connecté</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="details-btn" onclick="afficherDetails('Salle 202')">
+                    Voir les détails
+                </button>
+
+            </article>
+
+
+            <!-- CDI -->
+            <article class="salle-card" data-status="occupied">
+
+                <div class="salle-card-header">
+                    <div>
+                        <span class="salle-type">Centre de documentation</span>
+                        <h2>CDI</h2>
+                    </div>
+
+                    <span class="salle-status occupied">
+                        Occupé
+                    </span>
+                </div>
+
+                <div class="salle-information">
+
+                    <div class="salle-info">
+                        <span>🌡️</span>
+
+                        <div>
+                            <small>Température</small>
+                            <strong>22,1 °C</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>💡</span>
+
+                        <div>
+                            <small>Éclairage</small>
+                            <strong>65 %</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>👥</span>
+
+                        <div>
+                            <small>Présence</small>
+                            <strong>24 personnes</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>💨</span>
+
+                        <div>
+                            <small>Qualité de l'air</small>
+                            <strong>Bonne</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="details-btn" onclick="afficherDetails('CDI')">
+                    Voir les détails
+                </button>
+
+            </article>
+
+
+            <!-- Salle 301 -->
+            <article class="salle-card" data-status="free">
+
+                <div class="salle-card-header">
+                    <div>
+                        <span class="salle-type">Salle de cours</span>
+                        <h2>Salle 301</h2>
+                    </div>
+
+                    <span class="salle-status free">
+                        Libre
+                    </span>
+                </div>
+
+                <div class="salle-information">
+
+                    <div class="salle-info">
+                        <span>🌡️</span>
+
+                        <div>
+                            <small>Température</small>
+                            <strong>20,5 °C</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>💡</span>
+
+                        <div>
+                            <small>Éclairage</small>
+                            <strong>Éteint</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>👥</span>
+
+                        <div>
+                            <small>Présence</small>
+                            <strong>Aucune</strong>
+                        </div>
+                    </div>
+
+                    <div class="salle-info">
+                        <span>💨</span>
+
+                        <div>
+                            <small>Qualité de l'air</small>
+                            <strong>Très bonne</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="details-btn" onclick="afficherDetails('Salle 301')">
+                    Voir les détails
+                </button>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- Pied de page -->
+    <footer>
+        <p>© 2026 Smart School — Projet CIEL</p>
+        <p>Établissement scolaire intelligent, connecté et sécurisé</p>
+    </footer>
+
+
+    <script src="salles.js"></script>
+
+</body>
+
+</html>
