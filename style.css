@@ -2943,3 +2943,56 @@ footer p {
         padding: 25px 20px;
     }
 }
+/* Bouton vers le code de l'ESP32 */
+
+.esp32-code-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 25px;
+    padding: 25px;
+    background: white;
+    border: 1px solid #e5eaf1;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(23, 32, 51, 0.05);
+}
+
+.esp32-code-section h2 {
+    margin: 12px 0 8px;
+    color: #172033;
+}
+
+.esp32-code-section p {
+    color: #647084;
+    line-height: 1.6;
+}
+
+.esp32-code-link {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #2563eb;
+    color: white;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.esp32-code-link:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+    .esp32-code-section {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .esp32-code-link {
+        white-space: normal;
+    }
+}
