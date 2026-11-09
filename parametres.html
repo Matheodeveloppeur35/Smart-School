@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres - Smart School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a class="logo" href="index.html">🏫 Smart School</a>
+
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="dashboard.html">Tableau de bord</a>
+                <a href="capteurs.html">Capteurs</a>
+                <a href="alertes.html">Alertes</a>
+                <a href="energie.html">Énergie</a>
+                <a href="salles.html">Salles</a>
+                <a href="reseau.html">Réseau</a>
+                <a href="securite.html">Sécurité</a>
+                <a href="statistiques.html">Statistiques</a>
+                <a href="parametres.html" class="active">Paramètres</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-container">
+
+        <section class="page-header">
+            <span class="badge">⚙️ Configuration du projet</span>
+            <h1>Paramètres</h1>
+            <p>
+                Cette page présente les options qui pourront être configurées
+                dans Smart School.
+            </p>
+        </section>
+
+        <section class="settings-panel">
+
+            <h2>Préférences générales</h2>
+            <p class="panel-description">
+                Les options ci-dessous sont uniquement visuelles pour le moment.
+            </p>
+
+            <div class="settings-row">
+                <div>
+                    <strong>Nom de l'établissement</strong>
+                    <small>Nom affiché dans le projet</small>
+                </div>
+                <input
+                    type="text"
+                    value="Mon établissement"
+                    aria-label="Nom de l'établissement"
+                >
+            </div>
+
+            <div class="settings-row">
+                <div>
+                    <strong>Actualisation des données</strong>
+                    <small>Fréquence de mise à jour prévue</small>
+                </div>
+
+                <select aria-label="Fréquence d'actualisation">
+                    <option>Toutes les 5 secondes</option>
+                    <option>Toutes les 10 secondes</option>
+                    <option>Toutes les 30 secondes</option>
+                </select>
+            </div>
+
+            <div class="settings-row">
+                <div>
+                    <strong>Afficher les notifications</strong>
+                    <small>Prévoir l'affichage des alertes sur le tableau de bord</small>
+                </div>
+
+                <label class="settings-switch">
+                    <input type="checkbox" checked>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="settings-row">
+                <div>
+                    <strong>Mode démonstration</strong>
+                    <small>Les données affichées sont des exemples</small>
+                </div>
+
+                <span class="settings-label">Activé</span>
+            </div>
+
+        </section>
+
+        <section class="settings-panel">
+
+            <h2>Informations du projet</h2>
+            <p class="panel-description">
+                Informations générales sur la version actuelle du site.
+            </p>
+
+            <div class="settings-info-row">
+                <span>Nom du projet</span>
+                <strong>Smart School</strong>
+            </div>
+
+            <div class="settings-info-row">
+                <span>Filière</span>
+                <strong>CIEL</strong>
+            </div>
+
+            <div class="settings-info-row">
+                <span>Version</span>
+                <strong>Version de démonstration</strong>
+            </div>
+
+        </section>
+
+        <section class="settings-note">
+            <span>ℹ️</span>
+            <p>
+                Les changements effectués sur cette page ne sont pas encore
+                enregistrés. Les paramètres seront rendus fonctionnels dans
+                une prochaine étape.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>🏫 Smart School - Projet 1CIEL</p>
+        <p>Gestion intelligente de l'établissement scolaire</p>
+    </footer>
+
+</body>
+</html>
