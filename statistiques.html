@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques - Smart School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a class="logo" href="index.html">🏫 Smart School</a>
+
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="dashboard.html">Tableau de bord</a>
+                <a href="capteurs.html">Capteurs</a>
+                <a href="alertes.html">Alertes</a>
+                <a href="energie.html">Énergie</a>
+                <a href="salles.html">Salles</a>
+                <a href="reseau.html">Réseau</a>
+                <a href="securite.html">Sécurité</a>
+                <a href="statistiques.html" class="active">Statistiques</a>
+                <a href="parametres.html">Paramètres</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-container">
+
+        <section class="page-header">
+            <span class="badge">📊 Résumé du système</span>
+            <h1>Statistiques</h1>
+            <p>
+                Retrouvez un aperçu des données recueillies par le projet
+                Smart School.
+            </p>
+        </section>
+
+        <section class="statistics-cards">
+
+            <article class="statistics-card">
+                <span>🌡️</span>
+                <h2>Température moyenne</h2>
+                <p class="statistics-value">21,5 °C</p>
+                <small>Valeur simulée</small>
+            </article>
+
+            <article class="statistics-card">
+                <span>⚡</span>
+                <h2>Énergie consommée</h2>
+                <p class="statistics-value">18,6 kWh</p>
+                <small>Exemple pour la journée</small>
+            </article>
+
+            <article class="statistics-card">
+                <span>📡</span>
+                <h2>Équipements en ligne</h2>
+                <p class="statistics-value">11 / 12</p>
+                <small>État simulé</small>
+            </article>
+
+            <article class="statistics-card">
+                <span>🚨</span>
+                <h2>Alertes enregistrées</h2>
+                <p class="statistics-value">3</p>
+                <small>Exemple de la semaine</small>
+            </article>
+
+        </section>
+
+        <section class="statistics-panel">
+            <h2>Activité de la semaine</h2>
+            <p class="panel-description">
+                Exemple du nombre de relevés reçus chaque jour.
+            </p>
+
+            <div class="statistics-bars">
+
+                <div class="statistics-bar-item">
+                    <span>Lundi</span>
+                    <div class="statistics-bar-background">
+                        <div class="statistics-bar-fill" style="width: 65%;"></div>
+                    </div>
+                    <strong>65 %</strong>
+                </div>
+
+                <div class="statistics-bar-item">
+                    <span>Mardi</span>
+                    <div class="statistics-bar-background">
+                        <div class="statistics-bar-fill" style="width: 82%;"></div>
+                    </div>
+                    <strong>82 %</strong>
+                </div>
+
+                <div class="statistics-bar-item">
+                    <span>Mercredi</span>
+                    <div class="statistics-bar-background">
+                        <div class="statistics-bar-fill" style="width: 48%;"></div>
+                    </div>
+                    <strong>48 %</strong>
+                </div>
+
+                <div class="statistics-bar-item">
+                    <span>Jeudi</span>
+                    <div class="statistics-bar-background">
+                        <div class="statistics-bar-fill" style="width: 73%;"></div>
+                    </div>
+                    <strong>73 %</strong>
+                </div>
+
+                <div class="statistics-bar-item">
+                    <span>Vendredi</span>
+                    <div class="statistics-bar-background">
+                        <div class="statistics-bar-fill" style="width: 58%;"></div>
+                    </div>
+                    <strong>58 %</strong>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="statistics-note">
+            <span>ℹ️</span>
+            <p>
+                Les statistiques de cette page sont des données de démonstration.
+                Elles ne proviennent pas encore de l'ESP32.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>🏫 Smart School - Projet 1CIEL</p>
+        <p>Gestion intelligente de l'établissement scolaire</p>
+    </footer>
+
+</body>
+</html>
