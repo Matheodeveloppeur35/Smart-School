@@ -105,6 +105,7 @@
             <div class="sensor-table-wrapper">
 
                 <table class="sensor-table">
+
                     <thead>
                         <tr>
                             <th>Capteur</th>
@@ -120,7 +121,9 @@
                             <td>🌡️ Température DHT22</td>
                             <td>Salle 101</td>
                             <td>21,5 °C</td>
-                            <td><span class="sensor-status normal">Normal</span></td>
+                            <td>
+                                <span class="sensor-status normal">Normal</span>
+                            </td>
                             <td>Donnée de démonstration</td>
                         </tr>
 
@@ -128,7 +131,9 @@
                             <td>💧 Humidité DHT22</td>
                             <td>Salle 101</td>
                             <td>48 %</td>
-                            <td><span class="sensor-status normal">Normal</span></td>
+                            <td>
+                                <span class="sensor-status normal">Normal</span>
+                            </td>
                             <td>Donnée de démonstration</td>
                         </tr>
 
@@ -136,7 +141,9 @@
                             <td>👤 Détecteur de présence</td>
                             <td>Salle 202</td>
                             <td>Présence détectée</td>
-                            <td><span class="sensor-status active">Actif</span></td>
+                            <td>
+                                <span class="sensor-status active">Actif</span>
+                            </td>
                             <td>Donnée de démonstration</td>
                         </tr>
 
@@ -144,10 +151,13 @@
                             <td>💡 Capteur de luminosité</td>
                             <td>Salle 301</td>
                             <td>72 %</td>
-                            <td><span class="sensor-status normal">Normal</span></td>
+                            <td>
+                                <span class="sensor-status normal">Normal</span>
+                            </td>
                             <td>Donnée de démonstration</td>
                         </tr>
                     </tbody>
+
                 </table>
 
             </div>
@@ -155,37 +165,52 @@
         </section>
 
 
-        <!-- Code de l'ESP32 -->
-        <section class="esp32-code-section">
-            <div>
-                <span class="badge">🔧 Code du projet</span>
+        <!-- Bouton vers le code de l'ESP32 -->
+        <section style="
+            margin: 25px 0;
+            padding: 25px;
+            background: white;
+            border: 1px solid #e5eaf1;
+            border-radius: 16px;
+        ">
 
-                <h2>Programme de l'ESP32</h2>
+            <h2>🔧 Programme de l'ESP32</h2>
 
-                <p>
-                    Consultez le fichier contenant le programme utilisé pour
-                    tester le capteur DHT22 et les LED.
-                </p>
-            </div>
+            <p style="margin: 10px 0 18px;">
+                Consultez le code utilisé pour tester le capteur DHT22 et les LED.
+            </p>
 
             <a
-                class="esp32-code-link"
                 href="https://github.com/matheodeveloppeur35/Smart-School/blob/main/smart_school.ino"
                 target="_blank"
                 rel="noopener noreferrer"
+                style="
+                    display: inline-block;
+                    padding: 12px 18px;
+                    background: #2563eb;
+                    color: white;
+                    border-radius: 9px;
+                    font-weight: bold;
+                    text-decoration: none;
+                "
             >
                 Voir le code de l'ESP32 →
             </a>
+
         </section>
 
 
-        <!-- Note sur les données -->
-        <section class="sensor-note">
-            <span>ℹ️</span>
-            <p>
-                Les mesures de cette page sont simulées. Elles ne sont pas encore
-                envoyées automatiquement par l'ESP32.
-            </p>
+        <!-- Information sur les données -->
+        <section style="
+            margin: 25px 0;
+            padding: 16px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 12px;
+            color: #475569;
+        ">
+            ℹ️ Les mesures de cette page sont simulées. Elles ne sont pas encore
+            envoyées automatiquement par l'ESP32.
         </section>
 
     </main>
