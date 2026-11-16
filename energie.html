@@ -7,7 +7,6 @@
 
     <title>Énergie - Smart School</title>
 
-    <!-- style.css est dans le même dossier que energie.html -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,12 +25,19 @@
                 <a href="dashboard.html">Tableau de bord</a>
                 <a href="capteurs.html">Capteurs</a>
                 <a href="alertes.html">Alertes</a>
-                <a href="energie.html" class="active">Énergie</a>
-                <a href="salles.html">Salles</a>
-                <a href="reseau.html">Réseau</a>
-                <a href="securite.html">Sécurité</a>
-                <a href="statistiques.html">Statistiques</a>
-                <a href="parametres.html">Paramètres</a>
+
+                <details class="nav-more" open>
+                    <summary>Plus ▾</summary>
+
+                    <div class="nav-dropdown">
+                        <a href="energie.html" class="active" aria-current="page">Énergie</a>
+                        <a href="salles.html">Salles</a>
+                        <a href="reseau.html">Réseau</a>
+                        <a href="securite.html">Sécurité</a>
+                        <a href="statistiques.html">Statistiques</a>
+                        <a href="parametres.html">Paramètres</a>
+                    </div>
+                </details>
             </div>
 
         </nav>
@@ -41,7 +47,7 @@
     <!-- Contenu principal -->
     <main class="page-container">
 
-        <!-- Présentation de la page -->
+        <!-- Présentation -->
         <section class="page-header">
             <span class="badge">🌱 Gestion énergétique</span>
 
@@ -99,51 +105,41 @@
 
             <div class="energy-bar">
                 <span>Lundi</span>
-
                 <div class="bar-background">
                     <div class="bar-fill" style="width: 65%;"></div>
                 </div>
-
                 <strong>65 %</strong>
             </div>
 
             <div class="energy-bar">
                 <span>Mardi</span>
-
                 <div class="bar-background">
                     <div class="bar-fill" style="width: 80%;"></div>
                 </div>
-
                 <strong>80 %</strong>
             </div>
 
             <div class="energy-bar">
                 <span>Mercredi</span>
-
                 <div class="bar-background">
                     <div class="bar-fill" style="width: 45%;"></div>
                 </div>
-
                 <strong>45 %</strong>
             </div>
 
             <div class="energy-bar">
                 <span>Jeudi</span>
-
                 <div class="bar-background">
                     <div class="bar-fill" style="width: 70%;"></div>
                 </div>
-
                 <strong>70 %</strong>
             </div>
 
             <div class="energy-bar">
                 <span>Vendredi</span>
-
                 <div class="bar-background">
                     <div class="bar-fill" style="width: 55%;"></div>
                 </div>
-
                 <strong>55 %</strong>
             </div>
 
