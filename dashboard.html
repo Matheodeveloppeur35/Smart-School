@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,17 +20,24 @@
             🏫 <span>Smart School</span>
         </div>
 
-        <nav>
+        <nav class="nav-links">
             <a href="index.html">Accueil</a>
             <a href="dashboard.html" class="active">Tableau de bord</a>
             <a href="capteurs.html">Capteurs</a>
             <a href="alertes.html">Alertes</a>
-            <a href="energie.html">Énergie</a>
-            <a href="salles.html">Salles</a>
-            <a href="reseau.html">Réseau</a>
-            <a href="securite.html">Sécurité</a>
-            <a href="statistiques.html">Statistiques</a>
-            <a href="parametres.html">Paramètres</a>
+
+            <details class="nav-more">
+                <summary>Plus ▾</summary>
+
+                <div class="nav-dropdown">
+                    <a href="energie.html">Énergie</a>
+                    <a href="salles.html">Salles</a>
+                    <a href="reseau.html">Réseau</a>
+                    <a href="securite.html">Sécurité</a>
+                    <a href="statistiques.html">Statistiques</a>
+                    <a href="parametres.html">Paramètres</a>
+                </div>
+            </details>
         </nav>
 
         <button class="login-btn">
@@ -46,31 +54,23 @@
         <section class="dashboard-header">
 
             <div>
+                <span class="badge">📊 Supervision</span>
 
-                <span class="badge">
-                    📊 Supervision
-                </span>
-
-                <h1>
-                    Tableau de bord
-                </h1>
+                <h1>Tableau de bord</h1>
 
                 <p>
                     Visualisez l'état général de l'établissement
                     et de ses équipements connectés.
                 </p>
-
             </div>
 
             <div class="system-status">
-
                 <span class="status-dot"></span>
 
                 <div>
                     <strong>Système opérationnel</strong>
                     <small>Dernière mise à jour : maintenant</small>
                 </div>
-
             </div>
 
         </section>
@@ -80,82 +80,47 @@
         <section class="dashboard-cards">
 
             <article class="dashboard-card">
-
-                <div class="card-icon">
-                    🌡️
-                </div>
+                <div class="card-icon">🌡️</div>
 
                 <div>
                     <small>Température moyenne</small>
-                    <strong id="temperature">
-                        21,5 °C
-                    </strong>
+                    <strong id="temperature">21,5 °C</strong>
                 </div>
 
-                <span class="card-status">
-                    Normal
-                </span>
-
+                <span class="card-status">Normal</span>
             </article>
 
-
             <article class="dashboard-card">
-
-                <div class="card-icon">
-                    💡
-                </div>
+                <div class="card-icon">💡</div>
 
                 <div>
                     <small>Éclairage</small>
-                    <strong id="eclairage">
-                        78 %
-                    </strong>
+                    <strong id="eclairage">78 %</strong>
                 </div>
 
-                <span class="card-status">
-                    Actif
-                </span>
-
+                <span class="card-status">Actif</span>
             </article>
 
-
             <article class="dashboard-card">
-
-                <div class="card-icon">
-                    👤
-                </div>
+                <div class="card-icon">👤</div>
 
                 <div>
                     <small>Présence détectée</small>
-                    <strong id="presence">
-                        12
-                    </strong>
+                    <strong id="presence">12</strong>
                 </div>
 
-                <span class="card-status">
-                    Détectée
-                </span>
-
+                <span class="card-status">Détectée</span>
             </article>
 
-
             <article class="dashboard-card">
-
-                <div class="card-icon">
-                    📡
-                </div>
+                <div class="card-icon">📡</div>
 
                 <div>
                     <small>Réseau</small>
-                    <strong id="reseau">
-                        100 %
-                    </strong>
+                    <strong id="reseau">100 %</strong>
                 </div>
 
-                <span class="card-status">
-                    Connecté
-                </span>
-
+                <span class="card-status">Connecté</span>
             </article>
 
         </section>
@@ -171,98 +136,50 @@
                 de l'établissement.
             </p>
 
-
             <div class="rooms-grid">
 
                 <article class="room-card">
-
                     <div class="room-top">
                         <span class="room-icon">💻</span>
-
-                        <span class="room-online">
-                            ● En ligne
-                        </span>
+                        <span class="room-online">● En ligne</span>
                     </div>
 
                     <h3>Salle CIEL</h3>
-
-                    <p>
-                        Température : <strong>21,8 °C</strong>
-                    </p>
-
-                    <p>
-                        Éclairage : <strong>76 %</strong>
-                    </p>
-
+                    <p>Température : <strong>21,8 °C</strong></p>
+                    <p>Éclairage : <strong>76 %</strong></p>
                 </article>
 
-
                 <article class="room-card">
-
                     <div class="room-top">
                         <span class="room-icon">🖥️</span>
-
-                        <span class="room-online">
-                            ● En ligne
-                        </span>
+                        <span class="room-online">● En ligne</span>
                     </div>
 
                     <h3>Salle informatique</h3>
-
-                    <p>
-                        Température : <strong>22,1 °C</strong>
-                    </p>
-
-                    <p>
-                        Présence : <strong>Détectée</strong>
-                    </p>
-
+                    <p>Température : <strong>22,1 °C</strong></p>
+                    <p>Présence : <strong>Détectée</strong></p>
                 </article>
 
-
                 <article class="room-card">
-
                     <div class="room-top">
                         <span class="room-icon">🔧</span>
-
-                        <span class="room-online">
-                            ● En ligne
-                        </span>
+                        <span class="room-online">● En ligne</span>
                     </div>
 
                     <h3>Atelier</h3>
-
-                    <p>
-                        Qualité de l'air : <strong>Bonne</strong>
-                    </p>
-
-                    <p>
-                        Éclairage : <strong>65 %</strong>
-                    </p>
-
+                    <p>Qualité de l'air : <strong>Bonne</strong></p>
+                    <p>Éclairage : <strong>65 %</strong></p>
                 </article>
 
-
                 <article class="room-card">
-
                     <div class="room-top">
                         <span class="room-icon">🏢</span>
-
-                        <span class="room-online">
-                            ● En ligne
-                        </span>
+                        <span class="room-online">● En ligne</span>
                     </div>
 
                     <h3>Administration</h3>
-
-                    <p>
-                        Porte : <strong>Fermée</strong>
-                    </p>
-
-                    <p>
-                        Réseau : <strong>Connecté</strong>
-                    </p>
-
+                    <p>Porte : <strong>Fermée</strong></p>
+                    <p>Réseau : <strong>Connecté</strong></p>
                 </article>
 
             </div>
@@ -280,7 +197,6 @@
                 de Smart School.
             </p>
 
-
             <div class="quick-grid">
 
                 <a href="capteurs.html" class="quick-card">
@@ -291,7 +207,6 @@
                     </div>
                 </a>
 
-
                 <a href="energie.html" class="quick-card">
                     <span>⚡</span>
                     <div>
@@ -299,7 +214,6 @@
                         <p>Suivre la consommation</p>
                     </div>
                 </a>
-
 
                 <a href="reseau.html" class="quick-card">
                     <span>🌐</span>
@@ -309,7 +223,6 @@
                     </div>
                 </a>
 
-
                 <a href="securite.html" class="quick-card">
                     <span>🛡️</span>
                     <div>
@@ -318,7 +231,6 @@
                     </div>
                 </a>
 
-
                 <a href="statistiques.html" class="quick-card">
                     <span>📈</span>
                     <div>
@@ -326,7 +238,6 @@
                         <p>Consulter les statistiques</p>
                     </div>
                 </a>
-
 
                 <a href="alertes.html" class="quick-card">
                     <span>🚨</span>
@@ -345,19 +256,13 @@
 
     <!-- Pied de page -->
     <footer>
-
-        <p>
-            © 2026 Smart School — Projet CIEL
-        </p>
-
-        <p>
-            Établissement scolaire intelligent, connecté et sécurisé
-        </p>
-
+        <p>© 2026 Smart School — Projet CIEL</p>
+        <p>Établissement scolaire intelligent, connecté et sécurisé</p>
     </footer>
 
 
     <script src="dashboard.js"></script>
 
 </body>
+
 </html>
