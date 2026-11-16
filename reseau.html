@@ -19,20 +19,27 @@
             🏫 <span>Smart School</span>
         </div>
 
-        <nav>
+        <nav class="nav-links">
             <a href="index.html">Accueil</a>
-            <a href="index.html#dashboard">Tableau de bord</a>
-            <a href="index.html#capteurs">Capteurs</a>
-            <a href="index.html#alertes">Alertes</a>
-            <a href="energie.html">Énergie</a>
-            <a href="salles.html">Salles</a>
-            <a href="reseau.html" class="active">Réseau</a>
-            <a href="securite.html">Sécurité</a>
-            <a href="statistiques.html">Statistiques</a>
-            <a href="parametres.html">Paramètres</a>
+            <a href="dashboard.html">Tableau de bord</a>
+            <a href="capteurs.html">Capteurs</a>
+            <a href="alertes.html">Alertes</a>
+
+            <details class="nav-more" open>
+                <summary>Plus ▾</summary>
+
+                <div class="nav-dropdown">
+                    <a href="energie.html">Énergie</a>
+                    <a href="salles.html">Salles</a>
+                    <a href="reseau.html" class="active" aria-current="page">Réseau</a>
+                    <a href="securite.html">Sécurité</a>
+                    <a href="statistiques.html">Statistiques</a>
+                    <a href="parametres.html">Paramètres</a>
+                </div>
+            </details>
         </nav>
 
-        <button class="login-btn">Connexion</button>
+        <button class="login-btn" type="button">Connexion</button>
 
     </header>
 
@@ -67,7 +74,6 @@
 
             <article class="network-stat-card">
                 <div class="network-stat-icon">🖥️</div>
-
                 <div>
                     <strong>12</strong>
                     <small>Équipements connectés</small>
@@ -76,7 +82,6 @@
 
             <article class="network-stat-card">
                 <div class="network-stat-icon">📶</div>
-
                 <div>
                     <strong>98 %</strong>
                     <small>Disponibilité du réseau</small>
@@ -85,7 +90,6 @@
 
             <article class="network-stat-card">
                 <div class="network-stat-icon">⚡</div>
-
                 <div>
                     <strong>24 ms</strong>
                     <small>Temps de réponse</small>
@@ -94,7 +98,6 @@
 
             <article class="network-stat-card">
                 <div class="network-stat-icon">⚠️</div>
-
                 <div>
                     <strong>1</strong>
                     <small>Équipement à vérifier</small>
@@ -241,7 +244,9 @@
                             <td>Salle 101</td>
                             <td>192.168.1.31</td>
                             <td>À l'instant</td>
-                            <td><span class="device-state online">En ligne</span></td>
+                            <td>
+                                <span class="device-state online">En ligne</span>
+                            </td>
                         </tr>
 
                         <tr>
@@ -249,7 +254,9 @@
                             <td>Laboratoire 201</td>
                             <td>192.168.1.32</td>
                             <td>Il y a 2 minutes</td>
-                            <td><span class="device-state warning">À vérifier</span></td>
+                            <td>
+                                <span class="device-state warning">À vérifier</span>
+                            </td>
                         </tr>
 
                         <tr>
@@ -257,7 +264,9 @@
                             <td>Salle 202</td>
                             <td>192.168.1.40</td>
                             <td>Il y a 5 minutes</td>
-                            <td><span class="device-state online">En ligne</span></td>
+                            <td>
+                                <span class="device-state online">En ligne</span>
+                            </td>
                         </tr>
 
                         <tr>
@@ -265,7 +274,9 @@
                             <td>Accueil</td>
                             <td>192.168.1.10</td>
                             <td>Il y a 20 minutes</td>
-                            <td><span class="device-state offline">Hors ligne</span></td>
+                            <td>
+                                <span class="device-state offline">Hors ligne</span>
+                            </td>
                         </tr>
                     </tbody>
 
