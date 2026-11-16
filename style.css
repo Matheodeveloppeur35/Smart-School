@@ -2996,3 +2996,69 @@ footer p {
         white-space: normal;
     }
 }
+/* ==========================================
+   MENU DÉROULANT « PLUS »
+========================================== */
+
+.nav-more {
+    position: relative;
+}
+
+.nav-more summary {
+    color: #647084;
+    cursor: pointer;
+    list-style: none;
+    font-size: 15px;
+}
+
+.nav-more summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav-more summary:hover,
+.nav-more[open] summary {
+    color: #2563eb;
+}
+
+.nav-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    z-index: 200;
+    min-width: 180px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: white;
+    border: 1px solid #e5eaf1;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(23, 32, 51, 0.12);
+}
+
+.nav-dropdown a {
+    display: block;
+    padding: 10px;
+    border-radius: 7px;
+    color: #647084;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a.active {
+    background: #e8f1ff;
+    color: #2563eb;
+}
+
+/* Menu sur téléphone */
+@media (max-width: 700px) {
+    .nav-more {
+        flex-shrink: 0;
+    }
+
+    .nav-dropdown {
+        right: auto;
+        left: 0;
+    }
+}
