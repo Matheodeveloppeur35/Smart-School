@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Connexion - Smart School</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -34,7 +36,7 @@
                 Connectez-vous pour accéder au tableau de bord du projet.
             </p>
 
-            <form class="login-form" onsubmit="return afficherMessage(event)">
+            <form class="login-form" id="login-form">
 
                 <label for="email">Adresse e-mail</label>
                 <input
@@ -42,6 +44,7 @@
                     id="email"
                     name="email"
                     placeholder="exemple@etablissement.fr"
+                    autocomplete="email"
                     required
                 >
 
@@ -51,6 +54,7 @@
                     id="password"
                     name="password"
                     placeholder="Saisissez votre mot de passe"
+                    autocomplete="current-password"
                     required
                 >
 
@@ -60,24 +64,28 @@
                         <span>Se souvenir de moi</span>
                     </label>
 
-                    <a href="#" onclick="afficherAide(event)">
+                    <a href="#" id="help-link">
                         Besoin d'aide ?
                     </a>
                 </div>
 
-                <button type="submit" class="login-submit">
+                <button type="submit" class="login-submit" id="login-button">
                     Se connecter
                 </button>
 
-                <p id="login-message" class="login-message"></p>
+                <p
+                    id="login-message"
+                    class="login-message"
+                    role="status"
+                    aria-live="polite">
+                </p>
 
             </form>
 
             <div class="login-demo">
-                <strong>Version de démonstration</strong>
+                <strong>Connexion Smart School</strong>
                 <p>
-                    Le formulaire ne vérifie pas encore les identifiants.
-                    Aucune donnée n'est enregistrée.
+                    Utilisez un compte déjà créé dans l'authentification Supabase.
                 </p>
             </div>
 
@@ -94,21 +102,59 @@
         <p>Gestion intelligente de l'établissement scolaire</p>
     </footer>
 
+
+    <!-- Bibliothèque Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <script>
-        function afficherMessage(event) {
+        // Configuration publique du projet Supabase
+        const SUPABASE_URL = "https://bcxizecyvjmzicdsffrs.supabase.co";
+        const SUPABASE_PUBLISHABLE_KEY =
+            "sb_publishable_n8D2YlqTY_gpEQHJ9Iu94g_Q7ooe4UJ";
+
+        const clientSupabase = window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
+        const formulaire = document.getElementById("login-form");
+        const message = document.getElementById("login-message");
+        const boutonConnexion = document.getElementById("login-button");
+
+        formulaire.addEventListener("submit", async function (event) {
             event.preventDefault();
 
-            document.getElementById("login-message").textContent =
-                "La connexion sera activée dans une prochaine étape.";
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
 
-            return false;
-        }
+            message.textContent = "Connexion en cours...";
+            boutonConnexion.disabled = true;
+            boutonConnexion.textContent = "Connexion...";
 
-        function afficherAide(event) {
+            const { error } = await clientSupabase.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+            if (error) {
+                message.textContent =
+                    "Connexion impossible. Vérifiez votre e-mail et votre mot de passe.";
+                boutonConnexion.disabled = false;
+                boutonConnexion.textContent = "Se connecter";
+                return;
+            }
+
+            message.textContent = "Connexion réussie. Redirection...";
+
+            window.location.href = "dashboard.html";
+        });
+
+        document.getElementById("help-link").addEventListener("click", function (event) {
             event.preventDefault();
 
-            alert("La récupération du mot de passe n'est pas encore disponible.");
-        }
+            message.textContent =
+                "Pour récupérer l'accès, contactez la personne qui gère les comptes Smart School.";
+        });
     </script>
 
 </body>
