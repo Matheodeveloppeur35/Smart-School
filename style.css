@@ -3062,3 +3062,7 @@ footer p {
         left: 0;
     }
 }
+a.login-btn {
+    display: inline-block;
+    text-decoration: none;
+}
