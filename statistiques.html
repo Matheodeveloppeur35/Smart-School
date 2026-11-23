@@ -4,42 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Statistiques - Smart School</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <nav class="navbar">
-            <a class="logo" href="index.html">🏫 Smart School</a>
+    <!-- Barre de navigation -->
+    <header class="navbar">
 
-            <div class="nav-links">
-                <a href="index.html">Accueil</a>
-                <a href="dashboard.html">Tableau de bord</a>
-                <a href="capteurs.html">Capteurs</a>
-                <a href="alertes.html">Alertes</a>
-                <a href="energie.html">Énergie</a>
-                <a href="salles.html">Salles</a>
-                <a href="reseau.html">Réseau</a>
-                <a href="securite.html">Sécurité</a>
-                <a href="statistiques.html" class="active">Statistiques</a>
-                <a href="parametres.html">Paramètres</a>
-            </div>
+        <a class="logo" href="index.html">
+            🏫 Smart School
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="dashboard.html">Tableau de bord</a>
+            <a href="capteurs.html">Capteurs</a>
+            <a href="alertes.html">Alertes</a>
+
+            <details class="nav-more" open>
+                <summary>Plus ▾</summary>
+
+                <div class="nav-dropdown">
+                    <a href="energie.html">Énergie</a>
+                    <a href="salles.html">Salles</a>
+                    <a href="reseau.html">Réseau</a>
+                    <a href="securite.html">Sécurité</a>
+                    <a href="statistiques.html" class="active" aria-current="page">
+                        Statistiques
+                    </a>
+                    <a href="parametres.html">Paramètres</a>
+                </div>
+            </details>
         </nav>
+
     </header>
 
+
+    <!-- Contenu principal -->
     <main class="page-container">
 
         <section class="page-header">
             <span class="badge">📊 Résumé du système</span>
+
             <h1>Statistiques</h1>
+
             <p>
                 Retrouvez un aperçu des données recueillies par le projet
                 Smart School.
             </p>
         </section>
 
+
+        <!-- Cartes de statistiques -->
         <section class="statistics-cards">
 
             <article class="statistics-card">
@@ -72,8 +92,12 @@
 
         </section>
 
+
+        <!-- Activité de la semaine -->
         <section class="statistics-panel">
+
             <h2>Activité de la semaine</h2>
+
             <p class="panel-description">
                 Exemple du nombre de relevés reçus chaque jour.
             </p>
@@ -121,10 +145,14 @@
                 </div>
 
             </div>
+
         </section>
 
+
+        <!-- Note sur les données -->
         <section class="statistics-note">
             <span>ℹ️</span>
+
             <p>
                 Les statistiques de cette page sont des données de démonstration.
                 Elles ne proviennent pas encore de l'ESP32.
@@ -133,10 +161,13 @@
 
     </main>
 
+
+    <!-- Pied de page -->
     <footer>
         <p>🏫 Smart School - Projet 1CIEL</p>
         <p>Gestion intelligente de l'établissement scolaire</p>
     </footer>
 
 </body>
+
 </html>
