@@ -39,9 +39,7 @@
             </details>
         </nav>
 
-        <button class="login-btn" onclick="afficherConnexion()">
-            Connexion
-        </button>
+        <a class="login-btn" href="connexion.html">Connexion</a>
 
     </header>
 
@@ -210,7 +208,7 @@
             </div>
 
 
-            <!-- Cartes -->
+            <!-- Indicateurs principaux -->
             <div class="dashboard-cards">
 
                 <article class="dashboard-card">
@@ -252,7 +250,7 @@
             </div>
 
 
-            <!-- Salles -->
+            <!-- État des salles -->
             <div class="content-section">
 
                 <h2>État des salles</h2>
@@ -328,37 +326,37 @@
                         </div>
                     </button>
 
-                    <button class="quick-card" onclick="window.location.href='energie.html'">
+                    <a href="energie.html" class="quick-card">
                         <span>⚡</span>
                         <div>
                             <h3>Énergie</h3>
                             <p>Suivre la consommation</p>
                         </div>
-                    </button>
+                    </a>
 
-                    <button class="quick-card" onclick="window.location.href='reseau.html'">
+                    <a href="reseau.html" class="quick-card">
                         <span>🌐</span>
                         <div>
                             <h3>Réseau</h3>
                             <p>Surveiller le réseau</p>
                         </div>
-                    </button>
+                    </a>
 
-                    <button class="quick-card" onclick="window.location.href='securite.html'">
+                    <a href="securite.html" class="quick-card">
                         <span>🛡️</span>
                         <div>
                             <h3>Sécurité</h3>
                             <p>État de la sécurité</p>
                         </div>
-                    </button>
+                    </a>
 
-                    <button class="quick-card" onclick="window.location.href='statistiques.html'">
+                    <a href="statistiques.html" class="quick-card">
                         <span>📈</span>
                         <div>
                             <h3>Statistiques</h3>
                             <p>Consulter les statistiques</p>
                         </div>
-                    </button>
+                    </a>
 
                     <button class="quick-card" onclick="afficherSection('alertes')">
                         <span>🚨</span>
@@ -577,9 +575,11 @@
 
             <div class="security-card">
                 <span class="security-icon">🛡️</span>
+
                 <div>
                     <h2>Système sécurisé</h2>
                     <p>Aucun problème de sécurité détecté.</p>
+
                     <ul>
                         <li>Authentification active</li>
                         <li>Équipements surveillés</li>
@@ -651,7 +651,9 @@
             </div>
 
             <div class="presentation-card">
+
                 <h2>Notre objectif</h2>
+
                 <p>
                     Comment utiliser l'informatique, les réseaux et l'électronique
                     pour rendre un établissement scolaire plus intelligent,
@@ -659,6 +661,7 @@
                 </p>
 
                 <h2>Le fonctionnement</h2>
+
                 <p>
                     Des capteurs connectés à des ESP32 récupèrent différentes
                     informations dans l'établissement. Ces données peuvent ensuite
@@ -671,24 +674,12 @@
                     <div>🔌 <strong>Électronique</strong></div>
                     <div>🛡️ <strong>Cybersécurité</strong></div>
                 </div>
+
             </div>
 
         </section>
 
     </main>
-
-
-    <!-- FENÊTRE CONNEXION -->
-    <div id="connexion" class="modal">
-
-        <div class="modal-content">
-            <button class="close-modal" onclick="fermerConnexion()">×</button>
-            <h2>Connexion</h2>
-            <p>Cette fonctionnalité sera ajoutée prochainement.</p>
-            <button class="primary-btn" onclick="fermerConnexion()">Fermer</button>
-        </div>
-
-    </div>
 
 
     <!-- PIED DE PAGE -->
@@ -701,4 +692,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
