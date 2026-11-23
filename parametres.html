@@ -4,45 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Paramètres - Smart School</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <nav class="navbar">
-            <a class="logo" href="index.html">🏫 Smart School</a>
+    <!-- Barre de navigation -->
+    <header class="navbar">
 
-            <div class="nav-links">
-                <a href="index.html">Accueil</a>
-                <a href="dashboard.html">Tableau de bord</a>
-                <a href="capteurs.html">Capteurs</a>
-                <a href="alertes.html">Alertes</a>
-                <a href="energie.html">Énergie</a>
-                <a href="salles.html">Salles</a>
-                <a href="reseau.html">Réseau</a>
-                <a href="securite.html">Sécurité</a>
-                <a href="statistiques.html">Statistiques</a>
-                <a href="parametres.html" class="active">Paramètres</a>
-            </div>
+        <a class="logo" href="index.html">
+            🏫 Smart School
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="dashboard.html">Tableau de bord</a>
+            <a href="capteurs.html">Capteurs</a>
+            <a href="alertes.html">Alertes</a>
+
+            <details class="nav-more" open>
+                <summary>Plus ▾</summary>
+
+                <div class="nav-dropdown">
+                    <a href="energie.html">Énergie</a>
+                    <a href="salles.html">Salles</a>
+                    <a href="reseau.html">Réseau</a>
+                    <a href="securite.html">Sécurité</a>
+                    <a href="statistiques.html">Statistiques</a>
+                    <a href="parametres.html" class="active" aria-current="page">
+                        Paramètres
+                    </a>
+                </div>
+            </details>
         </nav>
+
     </header>
 
+
+    <!-- Contenu principal -->
     <main class="page-container">
 
         <section class="page-header">
             <span class="badge">⚙️ Configuration du projet</span>
+
             <h1>Paramètres</h1>
+
             <p>
                 Cette page présente les options qui pourront être configurées
                 dans Smart School.
             </p>
         </section>
 
+
+        <!-- Préférences générales -->
         <section class="settings-panel">
 
             <h2>Préférences générales</h2>
+
             <p class="panel-description">
                 Les options ci-dessous sont uniquement visuelles pour le moment.
             </p>
@@ -52,6 +73,7 @@
                     <strong>Nom de l'établissement</strong>
                     <small>Nom affiché dans le projet</small>
                 </div>
+
                 <input
                     type="text"
                     value="Mon établissement"
@@ -75,7 +97,9 @@
             <div class="settings-row">
                 <div>
                     <strong>Afficher les notifications</strong>
-                    <small>Prévoir l'affichage des alertes sur le tableau de bord</small>
+                    <small>
+                        Prévoir l'affichage des alertes sur le tableau de bord
+                    </small>
                 </div>
 
                 <label class="settings-switch">
@@ -95,9 +119,12 @@
 
         </section>
 
+
+        <!-- Informations du projet -->
         <section class="settings-panel">
 
             <h2>Informations du projet</h2>
+
             <p class="panel-description">
                 Informations générales sur la version actuelle du site.
             </p>
@@ -119,8 +146,11 @@
 
         </section>
 
+
+        <!-- Note sur les paramètres -->
         <section class="settings-note">
             <span>ℹ️</span>
+
             <p>
                 Les changements effectués sur cette page ne sont pas encore
                 enregistrés. Les paramètres seront rendus fonctionnels dans
@@ -130,10 +160,13 @@
 
     </main>
 
+
+    <!-- Pied de page -->
     <footer>
         <p>🏫 Smart School - Projet 1CIEL</p>
         <p>Gestion intelligente de l'établissement scolaire</p>
     </footer>
 
 </body>
+
 </html>
