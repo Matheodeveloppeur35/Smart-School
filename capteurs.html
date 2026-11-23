@@ -8,6 +8,115 @@
     <title>Capteurs - Smart School</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .manual-panel {
+            max-width: 1100px;
+            margin: 0 auto 25px;
+            padding: 24px;
+            background: white;
+            border: 1px solid #e5eaf1;
+            border-radius: 16px;
+        }
+
+        .manual-panel h2 {
+            margin-bottom: 8px;
+        }
+
+        .manual-panel > p {
+            margin-bottom: 20px;
+            color: #647084;
+        }
+
+        .manual-form {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .manual-field label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .manual-field input,
+        .manual-field select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #d5dce7;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .manual-actions {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .manual-button {
+            padding: 11px 16px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+        }
+
+        .manual-button:hover {
+            background: #1d4ed8;
+        }
+
+        .manual-button.reset {
+            background: #e2e8f0;
+            color: #172033;
+        }
+
+        .manual-button.reset:hover {
+            background: #cbd5e1;
+        }
+
+        .manual-message {
+            grid-column: 1 / -1;
+            min-height: 20px;
+            color: #15803d;
+            font-size: 14px;
+        }
+
+        .manual-label {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 5px 9px;
+            border-radius: 20px;
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .sensor-summary {
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 800px) {
+            .manual-form {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 500px) {
+            .manual-panel {
+                margin: 0 18px 25px;
+            }
+
+            .manual-form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -22,7 +131,7 @@
         <nav class="nav-links">
             <a href="index.html">Accueil</a>
             <a href="dashboard.html">Tableau de bord</a>
-            <a href="capteurs.html" class="active">Capteurs</a>
+            <a href="capteurs.html" class="active" aria-current="page">Capteurs</a>
             <a href="alertes.html">Alertes</a>
 
             <details class="nav-more">
@@ -42,30 +151,98 @@
     </header>
 
 
-    <!-- Contenu principal -->
     <main class="page-container">
 
         <section class="page-header">
             <span class="badge">📡 Équipements connectés</span>
-
             <h1>Suivi des capteurs</h1>
-
             <p>
-                Consultez les mesures et l'état des capteurs de l'établissement.
-                Les valeurs affichées sont actuellement des données de démonstration.
+                Consultez ou saisissez les valeurs de démonstration des capteurs.
+                Les valeurs saisies sont enregistrées dans ce navigateur.
             </p>
+            <span class="manual-label">Valeurs saisies manuellement — non transmises par l’ESP32</span>
         </section>
 
 
-        <!-- Résumé des capteurs -->
+        <!-- Formulaire de saisie -->
+        <section class="manual-panel">
+
+            <h2>Saisir les valeurs des capteurs</h2>
+            <p>
+                Modifie les champs puis clique sur « Enregistrer les valeurs ».
+            </p>
+
+            <form id="manual-form" class="manual-form">
+
+                <div class="manual-field">
+                    <label for="temperature-input">Température (°C)</label>
+                    <input
+                        type="number"
+                        id="temperature-input"
+                        step="0.1"
+                        min="-20"
+                        max="80"
+                        required
+                    >
+                </div>
+
+                <div class="manual-field">
+                    <label for="humidity-input">Humidité (%)</label>
+                    <input
+                        type="number"
+                        id="humidity-input"
+                        step="1"
+                        min="0"
+                        max="100"
+                        required
+                    >
+                </div>
+
+                <div class="manual-field">
+                    <label for="presence-input">Présence</label>
+                    <select id="presence-input">
+                        <option value="Détectée">Détectée</option>
+                        <option value="Aucune">Aucune</option>
+                    </select>
+                </div>
+
+                <div class="manual-field">
+                    <label for="light-input">Luminosité (%)</label>
+                    <input
+                        type="number"
+                        id="light-input"
+                        step="1"
+                        min="0"
+                        max="100"
+                        required
+                    >
+                </div>
+
+                <div class="manual-actions">
+                    <button class="manual-button" type="submit">
+                        Enregistrer les valeurs
+                    </button>
+
+                    <button class="manual-button reset" type="button" id="reset-button">
+                        Remettre les valeurs de démonstration
+                    </button>
+                </div>
+
+                <p id="manual-message" class="manual-message" aria-live="polite"></p>
+
+            </form>
+        </section>
+
+
+        <!-- Résumé des mesures -->
         <section class="sensor-summary">
 
             <article class="sensor-card">
                 <div class="sensor-icon">🌡️</div>
                 <div>
                     <h2>Température</h2>
-                    <p class="sensor-value">21,5 °C</p>
-                    <span class="sensor-status normal">Normal</span>
+                    <p class="sensor-value" id="temperature-value">21,5 °C</p>
+                    <span class="sensor-status normal" id="temperature-status">Normal</span>
                 </div>
             </article>
 
@@ -73,8 +250,8 @@
                 <div class="sensor-icon">💧</div>
                 <div>
                     <h2>Humidité</h2>
-                    <p class="sensor-value">48 %</p>
-                    <span class="sensor-status normal">Normal</span>
+                    <p class="sensor-value" id="humidity-value">48 %</p>
+                    <span class="sensor-status normal">Valeur saisie</span>
                 </div>
             </article>
 
@@ -82,8 +259,8 @@
                 <div class="sensor-icon">👤</div>
                 <div>
                     <h2>Présence</h2>
-                    <p class="sensor-value">Détectée</p>
-                    <span class="sensor-status active">Actif</span>
+                    <p class="sensor-value" id="presence-value">Détectée</p>
+                    <span class="sensor-status active">Valeur saisie</span>
                 </div>
             </article>
 
@@ -91,8 +268,8 @@
                 <div class="sensor-icon">💡</div>
                 <div>
                     <h2>Luminosité</h2>
-                    <p class="sensor-value">72 %</p>
-                    <span class="sensor-status normal">Normal</span>
+                    <p class="sensor-value" id="light-value">72 %</p>
+                    <span class="sensor-status normal">Valeur saisie</span>
                 </div>
             </article>
 
@@ -105,12 +282,11 @@
             <div class="sensor-section-heading">
                 <div>
                     <h2>Capteurs installés</h2>
-                    <p>État actuel des capteurs du projet.</p>
+                    <p>Valeurs affichées sur cette page.</p>
                 </div>
             </div>
 
             <div class="sensor-table-wrapper">
-
                 <table class="sensor-table">
 
                     <thead>
@@ -118,117 +294,155 @@
                             <th>Capteur</th>
                             <th>Salle</th>
                             <th>Mesure</th>
-                            <th>État</th>
-                            <th>Dernière lecture</th>
+                            <th>Source</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <tr>
-                            <td>🌡️ Température DHT22</td>
+                            <td>🌡️ Température</td>
                             <td>Salle 101</td>
-                            <td>21,5 °C</td>
-                            <td>
-                                <span class="sensor-status normal">Normal</span>
-                            </td>
-                            <td>Donnée de démonstration</td>
+                            <td id="table-temperature">21,5 °C</td>
+                            <td>Saisie manuelle</td>
                         </tr>
 
                         <tr>
-                            <td>💧 Humidité DHT22</td>
+                            <td>💧 Humidité</td>
                             <td>Salle 101</td>
-                            <td>48 %</td>
-                            <td>
-                                <span class="sensor-status normal">Normal</span>
-                            </td>
-                            <td>Donnée de démonstration</td>
+                            <td id="table-humidity">48 %</td>
+                            <td>Saisie manuelle</td>
                         </tr>
 
                         <tr>
-                            <td>👤 Détecteur de présence</td>
+                            <td>👤 Présence</td>
                             <td>Salle 202</td>
-                            <td>Présence détectée</td>
-                            <td>
-                                <span class="sensor-status active">Actif</span>
-                            </td>
-                            <td>Donnée de démonstration</td>
+                            <td id="table-presence">Détectée</td>
+                            <td>Saisie manuelle</td>
                         </tr>
 
                         <tr>
-                            <td>💡 Capteur de luminosité</td>
+                            <td>💡 Luminosité</td>
                             <td>Salle 301</td>
-                            <td>72 %</td>
-                            <td>
-                                <span class="sensor-status normal">Normal</span>
-                            </td>
-                            <td>Donnée de démonstration</td>
+                            <td id="table-light">72 %</td>
+                            <td>Saisie manuelle</td>
                         </tr>
                     </tbody>
 
                 </table>
-
             </div>
-
         </section>
 
 
-        <!-- Bouton vers le code de l'ESP32 -->
-        <section style="
-            margin: 25px 0;
-            padding: 25px;
-            background: white;
-            border: 1px solid #e5eaf1;
-            border-radius: 16px;
-        ">
-
-            <h2>🔧 Programme de l'ESP32</h2>
-
-            <p style="margin: 10px 0 18px;">
-                Consultez le code utilisé pour tester le capteur DHT22 et les LED.
-            </p>
+        <!-- Lien vers le code ESP32 -->
+        <section class="esp32-code-section">
+            <div>
+                <h2>🔧 Programme de l'ESP32</h2>
+                <p>
+                    Consulte le programme utilisé pour tester le capteur DHT22 et les LED.
+                </p>
+            </div>
 
             <a
+                class="esp32-code-link"
                 href="https://github.com/matheodeveloppeur35/Smart-School/blob/main/smart_school.ino"
                 target="_blank"
                 rel="noopener noreferrer"
-                style="
-                    display: inline-block;
-                    padding: 12px 18px;
-                    background: #2563eb;
-                    color: white;
-                    border-radius: 9px;
-                    font-weight: bold;
-                    text-decoration: none;
-                "
             >
                 Voir le code de l'ESP32 →
             </a>
-
-        </section>
-
-
-        <!-- Information sur les données -->
-        <section style="
-            margin: 25px 0;
-            padding: 16px;
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 12px;
-            color: #475569;
-        ">
-            ℹ️ Les mesures de cette page sont simulées. Elles ne sont pas encore
-            envoyées automatiquement par l'ESP32.
         </section>
 
     </main>
 
 
-    <!-- Pied de page -->
     <footer>
         <p>🏫 Smart School - Projet 1CIEL</p>
         <p>Gestion intelligente de l'établissement scolaire</p>
     </footer>
 
-</body>
 
+    <script>
+        const valeursParDefaut = {
+            temperature: 21.5,
+            humidity: 48,
+            presence: "Détectée",
+            light: 72
+        };
+
+        const formulaire = document.getElementById("manual-form");
+        const message = document.getElementById("manual-message");
+
+        function afficherValeurs(valeurs) {
+            document.getElementById("temperature-input").value = valeurs.temperature;
+            document.getElementById("humidity-input").value = valeurs.humidity;
+            document.getElementById("presence-input").value = valeurs.presence;
+            document.getElementById("light-input").value = valeurs.light;
+
+            const temperatureTexte =
+                Number(valeurs.temperature).toLocaleString("fr-FR") + " °C";
+            const humiditeTexte = valeurs.humidity + " %";
+            const luminositeTexte = valeurs.light + " %";
+
+            document.getElementById("temperature-value").textContent = temperatureTexte;
+            document.getElementById("humidity-value").textContent = humiditeTexte;
+            document.getElementById("presence-value").textContent = valeurs.presence;
+            document.getElementById("light-value").textContent = luminositeTexte;
+
+            document.getElementById("table-temperature").textContent = temperatureTexte;
+            document.getElementById("table-humidity").textContent = humiditeTexte;
+            document.getElementById("table-presence").textContent = valeurs.presence;
+            document.getElementById("table-light").textContent = luminositeTexte;
+
+            const statutTemperature = document.getElementById("temperature-status");
+            const temperature = Number(valeurs.temperature);
+
+            if (temperature >= 30) {
+                statutTemperature.textContent = "Alerte";
+                statutTemperature.className = "sensor-status warning";
+            } else if (temperature >= 25) {
+                statutTemperature.textContent = "Attention";
+                statutTemperature.className = "sensor-status warning";
+            } else {
+                statutTemperature.textContent = "Normal";
+                statutTemperature.className = "sensor-status normal";
+            }
+        }
+
+        formulaire.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const nouvellesValeurs = {
+                temperature: Number(document.getElementById("temperature-input").value),
+                humidity: Number(document.getElementById("humidity-input").value),
+                presence: document.getElementById("presence-input").value,
+                light: Number(document.getElementById("light-input").value)
+            };
+
+            localStorage.setItem("smartSchoolCapteurs", JSON.stringify(nouvellesValeurs));
+            afficherValeurs(nouvellesValeurs);
+
+            message.textContent = "Valeurs enregistrées dans ce navigateur.";
+        });
+
+        document.getElementById("reset-button").addEventListener("click", function () {
+            localStorage.removeItem("smartSchoolCapteurs");
+            afficherValeurs(valeursParDefaut);
+            message.textContent = "Valeurs de démonstration rétablies.";
+        });
+
+        const valeursEnregistrees = localStorage.getItem("smartSchoolCapteurs");
+
+        if (valeursEnregistrees) {
+            try {
+                afficherValeurs(JSON.parse(valeursEnregistrees));
+            } catch {
+                localStorage.removeItem("smartSchoolCapteurs");
+                afficherValeurs(valeursParDefaut);
+            }
+        } else {
+            afficherValeurs(valeursParDefaut);
+        }
+    </script>
+
+</body>
 </html>
